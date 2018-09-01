@@ -2,13 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>PRETEND 🌐 WORLD</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta http-equiv="last-modified" content="2018-08-01@17:24:01">
+    <meta name="description" content="You are at a party of celebrity impersonators.">
+    <meta http-equiv="last-modified" content="2018-08-01@16:46:25">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Limelight|Merriweather:400,400i,900">
-    <link href="css/sisyphus.css?lastUpdated=2018-08-01@17:24:01" rel="stylesheet">
+    <link href="css/sisyphus.css?lastUpdated=2018-08-01@16:46:25" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -21,28 +21,42 @@
     <!-- Twitter-->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:creator" content="@AhoyLemon">
-    <meta name="twitter:title" content="">
-    <meta name="twitter:description" content="">
-    <meta name="twitter:image" content="/img/og-wide.jpg">
-    <meta name="twitter:url" content="">
+    <meta name="twitter:title" content="PRETEND 🌐 WORLD">
+    <meta name="twitter:description" content="You are at a party of celebrity impersonators.">
+    <meta name="twitter:image" content="https://pretend.world/img/og-wide.jpg">
+    <meta name="twitter:url" content="https://pretend.world">
     <!-- OpenGraph-->
-    <meta property="og:title" content="">
+    <meta property="og:title" content="PRETEND 🌐 WORLD">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="">
-    <meta property="og:image" content="/img/og-wide.jpg">
+    <meta property="og:url" content="https://pretend.world">
+    <meta property="og:image" content="https://pretend.world/img/og-wide.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:description" content="">
+    <meta property="og:description" content="You are at a party of celebrity impersonators.">
     <meta property="og:email" content="lemon@thefpl.us">
+    <link href="css/deleteme.css?lastUpdated=2018-08-01@16:46:25" rel="stylesheet">
   </head>
   <body>
     <div id="app">
-      <main>
-        <figure class="scene">
-          <div class="hill"><a class="sisyphys" @click="sisyphusClick()" :style="{ bottom: s.bottom +'%', left: s.left+'%', width:s.width+'%', height:s.height+'%' }"></a>
-            <div class="rock" :style="{ bottom:r.bottom+'%', left:rockLeft}" :class="{ falling: r.falling }"></div>
-          </div>
-        </figure>
+      <!--include partials/_debug.pug-->
+      <button class="sidebar-button" v-on:click="toggleDrawer" v-bind:class=" {active: sidebarVisible} " v-cloak aria-label="Open Sidebar" v-if="my.round &gt; 2">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+          <circle class="fill" cx="50.6" cy="49.7" r="42"></circle>
+          <path class="outline" d="M50 96C24.6 96 4 75.4 4 50S24.6 4 50 4s46 20.6 46 46-20.6 46-46 46zm0-86.2C27.8 9.8 9.8 27.8 9.8 50s18 40.3 40.2 40.3S90.3 72.2 90.3 50 72.2 9.8 50 9.8z"></path>
+          <path class="question-mark" d="M47.6 58.9c-.6-.7-.9-1.6-.9-2.8 0-2.4.4-4.3 1.3-5.9.9-1.6 2.1-3.3 3.8-5.2 1.2-1.4 2.2-2.6 2.7-3.6.6-.9.9-2 .9-3.2 0-1.3-.5-2.3-1.4-3.1-1-.7-2.3-1.1-3.9-1.1-1.5 0-2.9.3-4.1.9-1.3.6-3 1.5-5.1 2.8-1.3.7-2.4 1.1-3.3 1.1-1 0-1.8-.4-2.5-1.3s-1-1.9-1-3.1c0-.8.1-1.5.5-2.1.3-.6.8-1.1 1.4-1.6 2-1.6 4.4-2.9 7-3.8 2.7-.9 5.3-1.4 8-1.4 2.9 0 5.4.5 7.7 1.5s4.1 2.4 5.3 4.2c1.3 1.8 1.9 3.8 1.9 6 0 1.7-.3 3.3-1 4.7-.7 1.4-1.5 2.6-2.4 3.7-.9 1-2.2 2.3-3.7 3.8-1.8 1.6-3.1 3-4 4.1-.9 1.1-1.4 2.3-1.7 3.6-.2.9-.6 1.6-1.1 2-.6.5-1.3.7-2.1.7-1 .1-1.8-.2-2.3-.9zm-1.7 14.8c-1.1-1.1-1.7-2.6-1.7-4.3 0-1.7.6-3.1 1.7-4.3s2.5-1.7 4.2-1.7c1.7 0 3 .6 4.2 1.7 1.1 1.1 1.7 2.6 1.7 4.3 0 1.7-.6 3.1-1.7 4.3-1.1 1.1-2.5 1.7-4.2 1.7-1.7 0-3.1-.5-4.2-1.7z"></path>
+          <path class="x" d="M70.3 69c0 1.3-.5 2.4-1.5 3.3-1 .9-2.1 1.4-3.4 1.4-1.3 0-2.4-.6-3.4-1.7L49.6 56.9 37 72.1c-1 1.1-2.1 1.7-3.4 1.7-1.2 0-2.3-.5-3.3-1.4-1-.9-1.5-2.1-1.5-3.3 0-1.1.4-2.1 1.2-3L43.5 50l-13-15.8c-.8-1-1.3-2-1.3-3 0-1.3.5-2.4 1.5-3.3 1-.9 2.1-1.4 3.3-1.4 1.3 0 2.5.6 3.4 1.7l12.1 14.6 12-14.6c1-1.1 2.1-1.7 3.4-1.7 1.2 0 2.3.5 3.3 1.4 1 .9 1.5 2.1 1.5 3.3 0 1.1-.4 2.1-1.2 3l-13 15.6L69 65.9c.9 1 1.3 2 1.3 3.1z"></path>
+        </svg>
+      </button>
+      <div class="sidebar" v-bind:class=" {visible: sidebarVisible} ">
+        <ul>
+          <li><span class="label">This site is</span><span class="indent"><span>by </span><a href="https://ahoylemon.xyz" target="_blank" rel="noopener" onclick="sendEvent('outside link', 'site by Lemon', 'https://ahoylemon.xyz')">Lemon</a></span></li>
+          <li><span class="label">With help from</span><span class="indent"><a href="https://twitter.com/AberrantWhimsy" target="_blank" rel="noopener" onclick="sendEvent('outside link', 'Sanguinary Novel', 'https://twitter.com/AberrantWhimsy')">Sanguinary Novel</a></span></li>
+          <li><span class="label">There's more info in the</span><span class="indent"><a href="https://github.com/AhoyLemon/pretend.world" target="_blank" rel="noopener" onclick="sendEvent('outside link', 'GitHub Repo', 'https://github.com/AhoyLemon/pretend.world')">GitHub repository</a></span></li>
+        </ul>
+      </div>
+      <main v-cloak><img src="img/confess.jpg">
+        <button class="zoom-in">Zoom In</button>
+        <button class="enhance">Enhance</button>
       </main>
       <aside class="banner animated bounceInDown" v-cloak v-if="bannerVisible">
         <div class="icon-holder"><img class="icon" src="svg/lemon.svg"></div>
@@ -65,15 +79,15 @@
       {
         "@context": "http://schema.org",
         "@type": "VideoGame",
-        "name": "",
-        "url": "",
-        "image": "/img/og-image.png",
+        "name": "PRETEND 🌐 WORLD",
+        "url": "https://pretend.world",
+        "image": "https://pretend.world/img/og-image.png",
         "playMode": "SinglePlayer",
         "applicationCategory": "browser game",
         "gamePlatform": "web browser",
         "operatingSystem": "web browser",
         "genre": "guessing game",
-        "description": "",
+        "description": "You are at a party of celebrity impersonators.",
         "inLanguage": "English",
         "author": {
           "@type": "Person",
@@ -98,25 +112,25 @@
         "screenshot": [
           {
             "@type": "ImageObject",
-            "url": "/img/screenshots/1.jpg",
+            "url": "https://pretend.world/img/screenshots/1.jpg",
             "width": "1200",
             "height": "650"
           },
           {
             "@type": "ImageObject",
-            "url": "/img/screenshots/2.jpg",
+            "url": "https://pretend.world/img/screenshots/2.jpg",
             "width": "1200",
             "height": "650"
           },
           {
             "@type": "ImageObject",
-            "url": "/img/screenshots/3.jpg",
+            "url": "https://pretend.world/img/screenshots/3.jpg",
             "width": "980",
             "height": "980"
           },
           {
             "@type": "ImageObject",
-            "url": "/img/screenshots/ss4.jpg",
+            "url": "https://pretend.world/img/screenshots/ss4.jpg",
             "width": "980",
             "height": "980"
           }

@@ -14,11 +14,11 @@ html(lang="en")
 
     #app
 
-
-      figure.scene
-        .hill
-          .sisyphys(@click="sisyphusClick()")
-          .rock
+      main
+        figure.scene
+          .hill
+            a.sisyphys(@click="sisyphusClick()" :style="{ bottom: s.bottom +'%', left: s.left+'%', width:s.width+'%', height:s.height+'%' }")
+            .rock(:style="{ bottom:r.bottom+'%', left:rockLeft}" :class="{ falling: r.falling }" )
 
       include partials/_banner.pug
 

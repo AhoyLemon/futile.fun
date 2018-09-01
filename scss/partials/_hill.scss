@@ -1,0 +1,16 @@
+body { background:#333; }
+main { height: 99vh; @include flex-center(); }
+
+$rock: 8vw;
+$scene: ($rock * 5);
+$sHeight: ($rock * 0.5);
+$sWidth: ($sHeight * 0.4);
+
+figure.scene { width:$scene; height:$scene; background:lime; position: relative; overflow: hidden;
+
+  .sisyphys { height: $sHeight; width: $sWidth; background:purple; display: block; position: absolute; z-index: 4; cursor: pointer; border-radius: 4px; transition:all 0.3s ease; }
+  .rock { width:$rock; height:$rock; position: absolute; background:blue; border-radius:50%; margin-left: -10px; transition: all 0.3s ease; transition-delay:0.1s;
+    &.falling { transition-duration: 2s; transition-timing-function: cubic-bezier(.32,.39,.47,1.04); }
+  }
+
+}

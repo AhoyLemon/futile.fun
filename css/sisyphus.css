@@ -170,3 +170,67 @@ sup {
 
 svg {
   overflow: hidden; }
+
+body {
+  background: #333; }
+
+main {
+  height: 99vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+
+figure.scene {
+  width: 40vw;
+  height: 40vw;
+  background: lime;
+  position: relative;
+  overflow: hidden; }
+  figure.scene .sisyphys {
+    height: 4vw;
+    width: 1.6vw;
+    background: purple;
+    display: block;
+    position: absolute;
+    z-index: 4;
+    cursor: pointer;
+    border-radius: 4px;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+  figure.scene .rock {
+    width: 8vw;
+    height: 8vw;
+    position: absolute;
+    background: blue;
+    border-radius: 50%;
+    margin-left: -10px;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    -webkit-transition-delay: 0.1s;
+    -o-transition-delay: 0.1s;
+    transition-delay: 0.1s; }
+    figure.scene .rock.falling {
+      -webkit-transition-duration: 2s;
+      -o-transition-duration: 2s;
+      transition-duration: 2s;
+      -webkit-transition-timing-function: cubic-bezier(0.32, 0.39, 0.47, 1.04);
+      -o-transition-timing-function: cubic-bezier(0.32, 0.39, 0.47, 1.04);
+      transition-timing-function: cubic-bezier(0.32, 0.39, 0.47, 1.04); }
