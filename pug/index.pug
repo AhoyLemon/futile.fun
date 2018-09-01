@@ -14,24 +14,12 @@ html(lang="en")
 
     #app
 
-      if testing == true
-        //include partials/_debug.pug
 
-      include partials/_sidebar.pug
+      figure.scene
+        .hill
+          .sisyphys(@click="sisyphusClick()")
+          .rock
 
-      main(v-cloak)
-
-        include partials/_special-screen.pug
-
-        //- Q&A SCREENS
-        .screen.qa-screen(v-else)
-          figure.celebrity-photo(:style=" { backgroundImage: 'url('+current.pic+')' } ")
-            .button-holder.impersonator-website
-              a.button(v-if="phase == 'answer'" @click="visitImpersonatorWebsite()") impersonator website
-          figcaption
-            include partials/_question.pug
-            include partials/_answer.pug
-      
       include partials/_banner.pug
 
     include partials/_javascripts.pug
