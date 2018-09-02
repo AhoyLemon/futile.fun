@@ -6,4 +6,9 @@
 @import "globals/_z-index";
 
 // SITE SPECIFIC
+@import "partials/_variables";
+@import "partials/_extends";
+@import "partials/_default";
 @import "partials/_hill";
+@import "partials/_store";
+@import "partials/_inventory";

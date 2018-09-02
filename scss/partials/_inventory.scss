@@ -1,0 +1,4 @@
+aside.inventory { @include position(fixed,0,null,0,0); overflow-y: auto; width:calc(25% - 15px); padding:2em; z-index: 2;
+  .header { @extend %asideHead; }
+  .item { @extend %item; background: linear-gradient(to bottom, #00b4db, #0083b0); }
+}

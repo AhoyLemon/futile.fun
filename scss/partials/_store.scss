@@ -1,0 +1,9 @@
+aside.store { @include position(fixed,0,0,0); overflow-y: auto; width:calc(25% - 15px); padding:2em;
+
+  .header { @extend %asideHead; }
+
+  .item { @extend %item; cursor: pointer;
+    &:hover { transform: scale(1.025); background: linear-gradient(to bottom, saturate(#ff416c,30%), saturate(#ff4b2b,30%)); }
+  }
+
+}

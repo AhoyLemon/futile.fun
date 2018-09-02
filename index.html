@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta http-equiv="last-modified" content="2018-08-01@17:24:01">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Limelight|Merriweather:400,400i,900">
-    <link href="css/sisyphus.css?lastUpdated=2018-08-01@17:24:01" rel="stylesheet">
+    <meta http-equiv="last-modified" content="2018-08-01@20:04:51">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Averia+Libre:300i,400,400i,700">
+    <link href="css/sisyphus.css?lastUpdated=2018-08-01@20:04:51" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -37,29 +37,34 @@
   </head>
   <body>
     <div id="app">
-      <main>
-        <figure class="scene">
-          <div class="hill"><a class="sisyphys" @click="sisyphusClick()" :style="{ bottom: s.bottom +'%', left: s.left+'%', width:s.width+'%', height:s.height+'%' }"></a>
-            <div class="rock" :style="{ bottom:r.bottom+'%', left:rockLeft}" :class="{ falling: r.falling }"></div>
-          </div>
-        </figure>
+      <aside class="inventory" v-cloak v-if="inventory.length &gt; 0">
+        <div class="header">Your Inventory</div>
+        <div class="item" v-for="item in inventory">
+          <div class="name">{{item.name}}</div>
+          <div class="desc">{{item.desc}}</div>
+          <div class="price">{{item.price}}</div>
+        </div>
+      </aside>
+      <main v-cloak>
+        <div class="scene">
+          <figure>
+            <div class="hill"><a class="sisyphys" @click="sisyphusClick()" :style="{ bottom: s.bottom +'%', left: s.left+'%', width:s.width+'%', height:s.height+'%' }"></a>
+              <div class="rock" :style="{ bottom:r.bottom+'%', left:rockLeft}" :class="{ falling: r.falling }"></div>
+            </div>
+          </figure>
+          <figcaption v-text="message"></figcaption>
+        </div>
       </main>
-      <aside class="banner animated bounceInDown" v-cloak v-if="bannerVisible">
-        <div class="icon-holder"><img class="icon" src="svg/lemon.svg"></div>
-        <div class="text-holder"><a class="text" href="https://ahoylemon.xyz" onclick="sendEvent('outside link', 'https://ahoylemon.xyz', 'banner')">This site is by Lemon.</a></div><a class="close" v-on:click="bannerVisible = false">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-            <circle class="fill" cx="50.6" cy="49.7" r="42"></circle>
-            <path class="outline" d="M50 96C24.6 96 4 75.4 4 50S24.6 4 50 4s46 20.6 46 46-20.6 46-46 46zm0-86.2C27.8 9.8 9.8 27.8 9.8 50s18 40.3 40.2 40.3S90.3 72.2 90.3 50 72.2 9.8 50 9.8z"></path>
-            <g class="close" id="HamburgerClose">
-              <path class="x" d="M70.3 69c0 1.3-.5 2.4-1.5 3.3-1 .9-2.1 1.4-3.4 1.4-1.3 0-2.4-.6-3.4-1.7L49.6 56.9 37 72.1c-1 1.1-2.1 1.7-3.4 1.7-1.2 0-2.3-.5-3.3-1.4-1-.9-1.5-2.1-1.5-3.3 0-1.1.4-2.1 1.2-3L43.5 50l-13-15.8c-.8-1-1.3-2-1.3-3 0-1.3.5-2.4 1.5-3.3 1-.9 2.1-1.4 3.3-1.4 1.3 0 2.5.6 3.4 1.7l12.1 14.6 12-14.6c1-1.1 2.1-1.7 3.4-1.7 1.2 0 2.3.5 3.3 1.4 1 .9 1.5 2.1 1.5 3.3 0 1.1-.4 2.1-1.2 3l-13 15.6L69 65.9c.9 1 1.3 2 1.3 3.1z"></path>
-            </g>
-          </svg></a>
+      <aside class="store" v-cloak v-if="store.length &gt; 0">
+        <div class="header">Buy Upgrades</div><a class="item" v-for="item,i in store" @click="buyItem(i,item.id)">
+          <div class="name">{{item.name}}</div>
+          <div class="desc">{{item.desc}}</div>
+          <div class="price">{{item.price}}</div></a>
       </aside>
     </div>
     <div class="javascripts">
       <script src="js/libraries/vue.full.js"></script>
       <script src="js/min/sisyphus.min.js"></script>
-      <script type="text/javascript" src="https://cdn.trackjs.com/releases/current/tracker.js"></script>
     </div>
     <script type="application/ld+json">
       {

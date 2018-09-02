@@ -14,13 +14,31 @@ html(lang="en")
 
     #app
 
-      main
-        figure.scene
-          .hill
-            a.sisyphys(@click="sisyphusClick()" :style="{ bottom: s.bottom +'%', left: s.left+'%', width:s.width+'%', height:s.height+'%' }")
-            .rock(:style="{ bottom:r.bottom+'%', left:rockLeft}" :class="{ falling: r.falling }" )
+      aside.inventory(v-cloak v-if="inventory.length > 0")
+        .header Your Inventory
 
-      include partials/_banner.pug
+        .item(v-for="item in inventory")
+          .name {{item.name}}
+          .desc {{item.desc}}
+          .price {{item.price}}
+
+      main(v-cloak)
+        .scene
+          figure
+            .hill
+              a.sisyphys(@click="sisyphusClick()" :style="{ bottom: s.bottom +'%', left: s.left+'%', width:s.width+'%', height:s.height+'%' }")
+              .rock(:style="{ bottom:r.bottom+'%', left:rockLeft}" :class="{ falling: r.falling }" )
+          figcaption(v-text="message")
+
+      
+      aside.store(v-cloak v-if="store.length > 0")
+        .header Buy Upgrades
+        a.item(v-for="item,i in store" @click="buyItem(i,item.id)")
+          .name {{item.name}}
+          .desc {{item.desc}}
+          .price {{item.price}}
+
+      //-include partials/_banner.pug
 
     include partials/_javascripts.pug
     include partials/_schema.pug

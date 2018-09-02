@@ -171,6 +171,30 @@ sup {
 svg {
   overflow: hidden; }
 
+aside.store .item, aside.inventory .item {
+  display: block;
+  padding: 1em;
+  color: white;
+  font-family: "Averia Libre", cursive;
+  margin-bottom: 1em;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ff416c), to(#ff4b2b));
+  background: -webkit-linear-gradient(top, #ff416c, #ff4b2b);
+  background: -o-linear-gradient(top, #ff416c, #ff4b2b);
+  background: linear-gradient(to bottom, #ff416c, #ff4b2b); }
+  aside.store .item .name, aside.inventory .item .name {
+    font-size: 125%; }
+
+aside.store .header, aside.inventory .header {
+  font-size: 180%;
+  color: #eee;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-family: "Averia Libre", cursive;
+  margin-bottom: 1em; }
+
+[v-cloak] {
+  display: none !important; }
+
 body {
   background: #333; }
 
@@ -194,43 +218,85 @@ main {
   align-items: center;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
-  justify-content: center; }
+  justify-content: center;
+  font-family: "Averia Libre", cursive; }
 
-figure.scene {
-  width: 40vw;
-  height: 40vw;
-  background: lime;
-  position: relative;
-  overflow: hidden; }
-  figure.scene .sisyphys {
-    height: 4vw;
-    width: 1.6vw;
-    background: purple;
-    display: block;
-    position: absolute;
-    z-index: 4;
-    cursor: pointer;
-    border-radius: 4px;
-    -webkit-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease; }
-  figure.scene .rock {
-    width: 8vw;
-    height: 8vw;
-    position: absolute;
-    background: blue;
-    border-radius: 50%;
-    margin-left: -10px;
-    -webkit-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-    -webkit-transition-delay: 0.1s;
-    -o-transition-delay: 0.1s;
-    transition-delay: 0.1s; }
-    figure.scene .rock.falling {
-      -webkit-transition-duration: 2s;
-      -o-transition-duration: 2s;
-      transition-duration: 2s;
-      -webkit-transition-timing-function: cubic-bezier(0.32, 0.39, 0.47, 1.04);
-      -o-transition-timing-function: cubic-bezier(0.32, 0.39, 0.47, 1.04);
-      transition-timing-function: cubic-bezier(0.32, 0.39, 0.47, 1.04); }
+.scene {
+  width: 40vw; }
+  .scene figure {
+    height: 40vw;
+    background: lime;
+    position: relative;
+    overflow: hidden; }
+    .scene figure .sisyphys {
+      height: 4vw;
+      width: 1.6vw;
+      background: purple;
+      display: block;
+      position: absolute;
+      z-index: 4;
+      cursor: pointer;
+      border-radius: 4px;
+      -webkit-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      transition: all 0.3s ease; }
+    .scene figure .rock {
+      width: 8vw;
+      height: 8vw;
+      position: absolute;
+      background: blue;
+      border-radius: 50%;
+      margin-left: -10px;
+      -webkit-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      transition: all 0.3s ease;
+      -webkit-transition-delay: 0.1s;
+      -o-transition-delay: 0.1s;
+      transition-delay: 0.1s; }
+      .scene figure .rock.falling {
+        -webkit-transition-duration: 2s;
+        -o-transition-duration: 2s;
+        transition-duration: 2s;
+        -webkit-transition-timing-function: cubic-bezier(0.32, 0.39, 0.47, 1.04);
+        -o-transition-timing-function: cubic-bezier(0.32, 0.39, 0.47, 1.04);
+        transition-timing-function: cubic-bezier(0.32, 0.39, 0.47, 1.04); }
+  .scene figcaption {
+    color: white;
+    font-size: 2.5vw;
+    text-align: center;
+    padding-top: 0.25em;
+    font-style: italic; }
+
+aside.store {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+  width: calc(25% - 15px);
+  padding: 2em; }
+  aside.store .item {
+    cursor: pointer; }
+    aside.store .item:hover {
+      -webkit-transform: scale(1.025);
+      -ms-transform: scale(1.025);
+      transform: scale(1.025);
+      background: -webkit-gradient(linear, left top, left bottom, from(#ff416c), to(#ff4b2b));
+      background: -webkit-linear-gradient(top, #ff416c, #ff4b2b);
+      background: -o-linear-gradient(top, #ff416c, #ff4b2b);
+      background: linear-gradient(to bottom, #ff416c, #ff4b2b); }
+
+aside.inventory {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  overflow-y: auto;
+  width: calc(25% - 15px);
+  padding: 2em;
+  z-index: 2; }
+  aside.inventory .item {
+    background: -webkit-gradient(linear, left top, left bottom, from(#00b4db), to(#0083b0));
+    background: -webkit-linear-gradient(top, #00b4db, #0083b0);
+    background: -o-linear-gradient(top, #00b4db, #0083b0);
+    background: linear-gradient(to bottom, #00b4db, #0083b0); }
