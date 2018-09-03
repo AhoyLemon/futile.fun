@@ -9,6 +9,11 @@ const storeItems = [
   },
   {
     id: 3, name: "A whole bunch of gum", price: 15,
-    desc: "Fart!"
+    desc: "Like, a considerable amount of gum. Enough to stick to the boulder to make it bigger"
+  },
+  {
+    id: 4, name: "Analgesic Heat Rub", price: 25,
+    desc: "Smells terrible! But should allow you to push to boulder a little bit faster."
   }
+
 ];

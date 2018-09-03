@@ -12,6 +12,7 @@ var app = new Vue({
     phase: 'begin',
     message: 'Help Sisyphus push the rock uphill.',
     score: 0,
+    totalScore: 0,
     s: sDefaults,
     r: rDefaults,
     store: storeItems,
@@ -31,6 +32,7 @@ var app = new Vue({
           self.switchMessage('pushing');
         }
         self.score++;
+        self.totalScore++;
         self.s.bottom += f;
         self.s.left += f;
 
@@ -38,8 +40,8 @@ var app = new Vue({
         self.r.left += f;
         
         if (self.r.left > 70) {
-          self.r.bottom = 2;
-          self.r.left = 0;
+          self.r.bottom = begin.r.bottom;
+          self.r.left = begin.r.left;
           self.r.falling = true;
           self.s.retreating = true;
           self.switchMessage('falling');
@@ -51,10 +53,10 @@ var app = new Vue({
         if (self.phase != 'retreat') {
           self.switchMessage('retreat');
         }
-        if (self.s.bottom < 0 || self.s.left < 0) {
+        if (self.s.bottom <= begin.s.bottom || self.s.left <= begin.s.left) {
           self.s.retreating = false;
-          self.s.bottom = 0;
-          self.s.left = 0;
+          self.s.bottom = begin.s.bottom;
+          self.s.left = begin.s.left;
           self.r.falling = false;
         }
       } 
@@ -76,10 +78,18 @@ var app = new Vue({
     buyItemEffect(id) {
       let self = this;
       if (id == 1) { // Fresh Kicks
-        self.s.pushForce = (self.s.pushForce * 3);
-      } else if (id == 2) {
+        self.s.pushForce = (self.s.pushForce * 1.01);
+        self.s.retreatSpeed = (self.s.pushForce * 1.7);
+      } else if (id == 2) { // small pickaxe
         self.r.height = (self.r.height * 0.85);
         self.r.width = (self.r.width * 0.85);
+        self.s.pushForce = (self.s.pushForce * 1.5);
+      } else if (id == 3) { // gum
+        self.r.height = (self.r.height * 1.15);
+        self.r.width = (self.r.width * 1.15);
+        self.s.pushForce = (self.s.pushForce * 0.5);
+      } else if (id == 3) { // analgesic
+        self.s.pushForce = (self.s.pushForce * 2);
       }
     },
 
@@ -106,6 +116,9 @@ var app = new Vue({
     },
     rockWidth() {
       return this.r.width+'%';
+    },
+    rockMarginLeft() {
+      return this.r.marginLeft+'%';
     }
 
   }

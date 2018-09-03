@@ -2580,25 +2580,29 @@ aside.store .item, aside.inventory .item {
   display: block;
   padding: 1em;
   color: white;
-  font-family: "Averia Libre", cursive;
+  font-family: "Poppins", sans-serif;
   margin-bottom: 1em;
   background: -webkit-gradient(linear, left top, left bottom, from(#ff416c), to(#ff4b2b));
   background: -webkit-linear-gradient(top, #ff416c, #ff4b2b);
   background: -o-linear-gradient(top, #ff416c, #ff4b2b);
   background: linear-gradient(to bottom, #ff416c, #ff4b2b); }
   aside.store .item .name, aside.inventory .item .name {
-    font-size: 125%; }
+    font-size: 125%;
+    font-weight: 700; }
 
 aside.store .header, aside.inventory .header {
   font-size: 180%;
   color: #eee;
   text-transform: uppercase;
-  font-weight: 300;
-  font-family: "Averia Libre", cursive;
-  margin-bottom: 1em; }
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 1em;
+  font-family: "Crimson Text", serif; }
 
 [v-cloak] {
   display: none !important; }
+
+body {
+  font-size: 14px; }
 
 body {
   background: #333; }
@@ -2624,34 +2628,35 @@ main {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "Averia Libre", cursive; }
+  font-family: "Poppins", sans-serif; }
 
 .scene {
   width: 40vw; }
   .scene figure {
     height: 40vw;
-    background: lime;
+    background: #999;
     position: relative;
     overflow: hidden; }
     .scene figure .sisyphys {
-      height: 4vw;
-      width: 1.6vw;
-      background: purple;
       display: block;
       position: absolute;
       z-index: 4;
       cursor: pointer;
-      border-radius: 4px;
       -webkit-transition: all 0.3s ease;
       -o-transition: all 0.3s ease;
-      transition: all 0.3s ease; }
+      transition: all 0.3s ease;
+      color: black;
+      background: transparent;
+      border: none;
+      padding: 0; }
+      .scene figure .sisyphys:hover svg * {
+        fill: darkblue; }
     .scene figure .rock {
       width: 8vw;
       height: 8vw;
       position: absolute;
-      background: blue;
+      background: beige;
       border-radius: 50%;
-      margin-left: -10px;
       -webkit-transition: all 0.3s ease;
       -o-transition: all 0.3s ease;
       transition: all 0.3s ease;
@@ -2670,7 +2675,7 @@ main {
     font-size: 2.5vw;
     text-align: center;
     padding-top: 0.25em;
-    font-style: italic; }
+    font-family: "Crimson Text", serif; }
 
 aside.store {
   position: fixed;
@@ -2681,31 +2686,72 @@ aside.store {
   width: calc(25% - 15px);
   padding: 2em;
   overflow-y: auto; }
-  aside.store .item.buyable {
-    cursor: pointer; }
-  aside.store .item:not(.buyable) {
-    cursor: not-allowed; }
-  aside.store .item.buyable:hover {
-    background: -webkit-gradient(linear, left top, left bottom, from(#ff416c), to(#ff4b2b));
-    background: -webkit-linear-gradient(top, #ff416c, #ff4b2b);
-    background: -o-linear-gradient(top, #ff416c, #ff4b2b);
-    background: linear-gradient(to bottom, #ff416c, #ff4b2b);
-    -webkit-transform: scale(1.05);
-    -ms-transform: scale(1.05);
-    transform: scale(1.05); }
-  aside.store .item.buyable:active {
-    background: -webkit-gradient(linear, left top, left bottom, from(#ff416c), to(#ff4b2b));
-    background: -webkit-linear-gradient(top, #ff416c, #ff4b2b);
-    background: -o-linear-gradient(top, #ff416c, #ff4b2b);
-    background: linear-gradient(to bottom, #ff416c, #ff4b2b);
-    -webkit-transform: scale(0.95);
-    -ms-transform: scale(0.95);
-    transform: scale(0.95); }
-  aside.store .item:not(.buyable):hover {
-    background: -webkit-gradient(linear, left top, left bottom, from(#835761), to(#76544e));
-    background: -webkit-linear-gradient(top, #835761, #76544e);
-    background: -o-linear-gradient(top, #835761, #76544e);
-    background: linear-gradient(to bottom, #835761, #76544e); }
+  aside.store .item {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch; }
+    aside.store .item.buyable {
+      cursor: pointer; }
+    aside.store .item:not(.buyable) {
+      cursor: not-allowed; }
+    aside.store .item.buyable:hover {
+      background: -webkit-gradient(linear, left top, left bottom, from(#ff416c), to(#ff4b2b));
+      background: -webkit-linear-gradient(top, #ff416c, #ff4b2b);
+      background: -o-linear-gradient(top, #ff416c, #ff4b2b);
+      background: linear-gradient(to bottom, #ff416c, #ff4b2b);
+      -webkit-transform: scale(1.05);
+      -ms-transform: scale(1.05);
+      transform: scale(1.05); }
+    aside.store .item.buyable:active {
+      background: -webkit-gradient(linear, left top, left bottom, from(#ff416c), to(#ff4b2b));
+      background: -webkit-linear-gradient(top, #ff416c, #ff4b2b);
+      background: -o-linear-gradient(top, #ff416c, #ff4b2b);
+      background: linear-gradient(to bottom, #ff416c, #ff4b2b);
+      -webkit-transform: scale(0.95);
+      -ms-transform: scale(0.95);
+      transform: scale(0.95); }
+    aside.store .item:not(.buyable):hover {
+      background: -webkit-gradient(linear, left top, left bottom, from(#835761), to(#76544e));
+      background: -webkit-linear-gradient(top, #835761, #76544e);
+      background: -o-linear-gradient(top, #835761, #76544e);
+      background: linear-gradient(to bottom, #835761, #76544e); }
+    aside.store .item .name-and-desc {
+      -ms-flex-preferred-size: 75%;
+      flex-basis: 75%;
+      -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+      flex-grow: 1;
+      -ms-flex-negative: 1;
+      flex-shrink: 1;
+      -ms-flex-item-align: auto;
+      align-self: auto; }
+    aside.store .item .price {
+      -ms-flex-preferred-size: 25%;
+      flex-basis: 25%;
+      -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+      flex-grow: 1;
+      -ms-flex-negative: 1;
+      flex-shrink: 1;
+      -ms-flex-item-align: auto;
+      align-self: auto;
+      font-size: 300%;
+      text-align: center;
+      padding-top: 0.15em;
+      font-weight: 700; }
 
 .score-hud {
   position: absolute;
@@ -2713,7 +2759,7 @@ aside.store {
   bottom: 10px;
   width: 100px;
   color: yellow;
-  font-family: "Averia Libre", cursive;
+  font-family: "Poppins", sans-serif;
   border: 1px solid currentColor; }
   .score-hud .label {
     display: block;
@@ -2726,7 +2772,7 @@ aside.store {
     display: block;
     text-align: center;
     font-size: 400%;
-    line-height: 90%;
+    line-height: 100%;
     padding-bottom: 0.1em; }
 
 aside.inventory {

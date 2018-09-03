@@ -3,16 +3,18 @@ main { height: 99vh; @include flex-center(); font-family: $font; }
 
 $rock: 8vw;
 $scene: ($rock * 5);
-$sHeight: ($rock * 0.5);
-$sWidth: ($sHeight * 0.4);
 
 .scene { width:$scene;
-  figure { height:$scene; background:lime; position: relative; overflow: hidden;
+  figure { height:$scene; background:#999; position: relative; overflow: hidden;
 
-    .sisyphys { height: $sHeight; width: $sWidth; background:purple; display: block; position: absolute; z-index: 4; cursor: pointer; border-radius: 4px; transition:all 0.3s ease; }
-    .rock { width:$rock; height:$rock; position: absolute; background:blue; border-radius:50%; margin-left: -10px; transition: all 0.3s ease; transition-delay:0.1s;
+    .sisyphys { display: block; position: absolute; z-index: 4; cursor: pointer; transition:all 0.3s ease; color:black; background:transparent; border:none; padding:0;
+      //background-image:url(../svg/pusher.svg); background-position: bottom right; background-size:contain; background-repeat: no-repeat;
+      //svg * { fill:currentColor; }
+      &:hover svg * { fill:darkblue; }
+    }
+    .rock { width:$rock; height:$rock; position: absolute; background:beige; border-radius:50%; transition: all 0.3s ease; transition-delay:0.1s;
       &.falling { transition-duration: 2s; transition-timing-function: cubic-bezier(.32,.39,.47,1.04); }
     }
   }
-  figcaption { color:white; font-size:2.5vw; text-align: center; padding-top: 0.25em; font-style: italic; }
+  figcaption { color:white; font-size:2.5vw; text-align: center; padding-top: 0.25em; font-family: $headline; }
 }

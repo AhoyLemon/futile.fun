@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta http-equiv="last-modified" content="2018-08-02@12:12:50">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Averia+Libre:300i,400,400i,700">
-    <link href="css/sisyphus.css?lastUpdated=2018-08-02@12:12:50" rel="stylesheet">
+    <meta http-equiv="last-modified" content="2018-08-03@00:00:57">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,700|Eczar:400,700|Poppins:400,400i,700  ">
+    <link href="css/sisyphus.css?lastUpdated=2018-08-03@00:00:57" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -40,8 +40,21 @@
       <main v-cloak>
         <div class="scene">
           <figure>
-            <div class="hill"><a class="sisyphys" @click="sisyphusClick()" :style="{ bottom: s.bottom +'%', left: s.left+'%', width:s.width+'%', height:s.height+'%' }"></a>
-              <div class="rock" :style="{ bottom:r.bottom+'%', left:rockLeft, width:rockWidth, height:rockHeight }" :class="{ falling: r.falling }"></div>
+            <div class="hill">
+              <button class="sisyphys" @click="sisyphusClick()" :style="{ bottom: s.bottom +'%', left: s.left+'%', width:s.width+'%', height:s.height+'%' }">
+                <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 41 100">
+                  <g v-if="phase == 'retreat'">
+                    <path d="M16.4 62.7s2.8-1.7 4.3-3.7c0 0-1.5 2.9-4.3 3.9v-.2z"></path>
+                    <path class="st2" d="M16.7 15.3c-2.6-.7-3.7-4.5-3.2-8.7.4-4.2 2.2-7.3 4.8-6.6 2.6.7 3.7 4.5 3.2 8.7-.4 4.2-2.2 7.3-4.8 6.6zM24.6 70.9l14.8 10.5c1.3 1 2 3.5 1.4 5.7-.6 2.2-2.2 3.2-3.5 2.2l-15.5-11c-.8-.4-1.4-1.3-1.7-2.6l-2.8-11.9c2.2-1.5 3.7-2.9 4.6-4.6l2.7 11.7z"></path>
+                    <path class="st2" d="M.3 92.6l4.2-26.5c.1-1.2.5-2.4 1.3-3.1l7.8-7.6V37.1l-.4 1.7c-.4 1.6-1.6 2.3-2.5 1.6-.1 0-.1-.1-.1-.1l-.2-.2s0-.1-.1-.1c-.3-.3-.5-.8-.6-1.3L4.4 18.2c-.4-1.6.1-3.4 1.1-4.1 1-.6 2.1.1 2.5 1.7l3.4 13.6 2.2-8.3c.1-1.9 1.1-3.3 2.3-3.3h13.4c.2 0 .3.1.5.1.9.3 1.5 1.5 1.5 3.1v22.1c0 1.7-.9 3.1-1.9 3.1s-1.9-1.4-1.9-3.1V24.2H20v1.5h2.7v27.1c-.2 4.1-1.2 6.3-5.8 9.5l-7.4 7.2-4 25.3c-.4 2.3-1.8 3.7-3.2 3.1-1.5-.6-2.3-3-2-5.3z"></path>
+                  </g>
+                  <g v-else>
+                    <path d="M18.5 28.1l-4.9-2.6c-.5-1.2-.6-2.6-.1-4.1 1.1-3.5 4.6-5.7 7.6-4.2 3 1.6 3.2 5.8 1 8.6-1 1.4-2.3 2.1-3.6 2.3z"></path>
+                    <path d="M34.7 49h.1v25.4h-5.2v-6.2l-2.4-14.3-8.7 5.8-3 15.2L5 99 .5 97 3 91.3l4-14.9 2.2-4-7.4-45.6.6-3L12.9.5l3.3 3.3L10 21.3v3.5l4.2 3 5.7 2.1h9.7l6.9-11.8 3.9 1.5-6.4 15-9.9 3.3h-2.5l-1.8 11.7 11.5-4z"></path>
+                  </g>
+                </svg>
+              </button>
+              <div class="rock" :style="{ bottom:r.bottom+'%', left:rockLeft, width:rockWidth, height:rockHeight, marginLeft:rockMarginLeft }" :class="{ falling: r.falling }"></div>
             </div>
           </figure>
           <figcaption v-text="message"></figcaption>
@@ -49,9 +62,11 @@
       </main>
       <aside class="store" v-cloak v-if="store.length &gt; 0">
         <div class="header">Buy Upgrades</div>
-        <div class="animated zoomInDown" v-if="score &gt; (item.price * 0.5)" v-for="item,i in store" @click="buyItem(i,item)"><a class="item" v-bind:class="{ buyable: score &gt;= item.price}">
-            <div class="name">{{item.name}}</div>
-            <div class="desc">{{item.desc}}</div>
+        <div class="animated zoomInDown" v-if="totalScore &gt; (item.price * 0.9)" v-for="item,i in store" @click="buyItem(i,item)"><a class="item" v-bind:class="{ buyable: score &gt;= item.price}">
+            <div class="name-and-desc">
+              <div class="name">{{item.name}}</div>
+              <div class="desc">{{item.desc}}</div>
+            </div>
             <div class="price">{{item.price}}</div></a></div>
         <div class="score-hud" v-if="score &gt; -1"><span class="label">Score</span><span class="count" v-text="score"></span></div>
       </aside>
@@ -61,7 +76,6 @@
           <div class="item animated bounceInUp" v-for="item in inventory">
             <div class="name">{{item.name}}</div>
             <div class="desc">{{item.desc}}</div>
-            <div class="price">{{item.price}}</div>
           </div>
         </div>
       </aside>
