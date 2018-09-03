@@ -68,11 +68,16 @@ var app = new Vue({
       if (self.score >= item.price) {
         self.score -= item.price;
         let n = self.store[i];
+        n.showDesc = false;
         self.inventory.push(n);
         self.store.splice(i,1);
         self.buyItemEffect(item.id);
       }
       
+    },
+
+    foo(item) {
+      item.showDesc = !item.showDesc;
     },
 
     buyItemEffect(id) {
@@ -88,8 +93,11 @@ var app = new Vue({
         self.r.height = (self.r.height * 1.15);
         self.r.width = (self.r.width * 1.15);
         self.s.pushForce = (self.s.pushForce * 0.5);
-      } else if (id == 3) { // analgesic
+      } else if (id == 4) { // analgesic
         self.s.pushForce = (self.s.pushForce * 2);
+      } else if (id == 5) { // peach tea
+        // does nothing
+
       }
     },
 

@@ -2648,7 +2648,8 @@ main {
       color: black;
       background: transparent;
       border: none;
-      padding: 0; }
+      padding: 0;
+      outline: none; }
       .scene figure .sisyphys:hover svg * {
         fill: darkblue; }
     .scene figure .rock {
@@ -2753,28 +2754,6 @@ aside.store {
       padding-top: 0.15em;
       font-weight: 700; }
 
-.score-hud {
-  position: absolute;
-  right: 10px;
-  bottom: 10px;
-  width: 100px;
-  color: yellow;
-  font-family: "Poppins", sans-serif;
-  border: 1px solid currentColor; }
-  .score-hud .label {
-    display: block;
-    border-bottom: 1px solid currentColor;
-    text-align: center;
-    text-transform: uppercase;
-    background: yellow;
-    color: #212121; }
-  .score-hud .count {
-    display: block;
-    text-align: center;
-    font-size: 400%;
-    line-height: 100%;
-    padding-bottom: 0.1em; }
-
 aside.inventory {
   position: fixed;
   top: 0;
@@ -2798,3 +2777,30 @@ aside.inventory {
     left: 0;
     padding: 2rem;
     overflow-y: scroll; }
+  aside.inventory a.toggle {
+    cursor: help; }
+
+.score-hud {
+  position: fixed;
+  right: 30px;
+  bottom: 10px;
+  width: 100px;
+  color: yellow;
+  font-family: "Poppins", sans-serif;
+  border: 1px solid currentColor;
+  background: #212121; }
+  .score-hud .label {
+    display: block;
+    border-bottom: 1px solid currentColor;
+    text-align: center;
+    text-transform: uppercase;
+    background: yellow;
+    color: #212121; }
+  .score-hud .count {
+    display: block;
+    text-align: center;
+    font-size: 400%;
+    line-height: 100%;
+    padding-bottom: 0.1em; }
+
+/*# sourceMappingURL=sisyphus.css.map */

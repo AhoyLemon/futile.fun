@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta http-equiv="last-modified" content="2018-08-03@00:00:57">
+    <meta http-equiv="last-modified" content="2018-08-03@15:30:45">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,700|Eczar:400,700|Poppins:400,400i,700  ">
-    <link href="css/sisyphus.css?lastUpdated=2018-08-03@00:00:57" rel="stylesheet">
+    <link href="css/sisyphus.css?lastUpdated=2018-08-03@15:30:45" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -73,10 +73,9 @@
       <aside class="inventory" v-cloak v-if="inventory.length &gt; 0">
         <div class="header">Your Inventory</div>
         <div class="inner">
-          <div class="item animated bounceInUp" v-for="item in inventory">
-            <div class="name">{{item.name}}</div>
-            <div class="desc">{{item.desc}}</div>
-          </div>
+          <div class="item animated bounceInUp" v-for="item in inventory"><a class="toggle" v-on:click="foo(item)">
+              <div class="name">{{item.name}}</div>
+              <div class="desc" v-if="item.showDesc == true">{{item.desc}}</div></a></div>
         </div>
       </aside>
     </div>

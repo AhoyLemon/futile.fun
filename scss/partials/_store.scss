@@ -14,8 +14,3 @@ aside.store { @include position(fixed,0,0,0); overflow: hidden; width:calc(25% -
     .price { @include flex-item(25%); font-size:300%; text-align: center; padding-top:0.15em; font-weight:$bold; }
   }
 }
-
-.score-hud { @include position(absolute,null,10px,10px); width:100px; color:yellow; font-family: $font; border:1px solid currentColor;
-  .label { display: block; border-bottom: 1px solid currentColor; text-align: center; text-transform: uppercase; background:yellow; color:$black; }
-  .count { display: block; text-align: center; font-size:400%; line-height: 100%; padding-bottom: 0.1em; }
-}

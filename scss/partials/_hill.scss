@@ -7,7 +7,7 @@ $scene: ($rock * 5);
 .scene { width:$scene;
   figure { height:$scene; background:#999; position: relative; overflow: hidden;
 
-    .sisyphys { display: block; position: absolute; z-index: 4; cursor: pointer; transition:all 0.3s ease; color:black; background:transparent; border:none; padding:0;
+    .sisyphys { display: block; position: absolute; z-index: 4; cursor: pointer; transition:all 0.3s ease; color:black; background:transparent; border:none; padding:0; outline:none;
       //background-image:url(../svg/pusher.svg); background-position: bottom right; background-size:contain; background-repeat: no-repeat;
       //svg * { fill:currentColor; }
       &:hover svg * { fill:darkblue; }

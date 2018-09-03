@@ -4,4 +4,5 @@ aside.inventory { @include position(fixed,0,null,0,0); width:calc(25% - 15px); z
 
   .inner { @include position(absolute,60px,-17px,0,0); padding:2rem; overflow-y: scroll; }
 
+  a.toggle { cursor: help; }
 }
