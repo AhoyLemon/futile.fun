@@ -11,49 +11,31 @@ var app = new Vue({
   data: {
     phase: 'begin',
     message: 'Help Sisyphus push the rock uphill.',
-    s: {
-      bottom: 0,
-      left:0,
-      width: 3,
-      height:8,
-      retreating: false
-    },
-    r: {
-      bottom: 2,
-      left:0
-    },
-
-    store: [
-      { 
-        id: 1, name: "Fresh Kicks", price: 100,
-        desc: "Better arch support means that you'll get 1.6% better pushes.",
-      },
-      { 
-        id: 2, name: "Small pickaxe", price: 300,
-        desc: "It's not the sharpest, but it's enough to carve out a little bit of the rock to make it slightly smaller.",
-      }
-    ],
+    score: 0,
+    s: sDefaults,
+    r: rDefaults,
+    store: storeItems,
     inventory: []
-
   },
 
   methods: {
 
     sisyphusClick() {
       let self = this;
-      let m = 6;
+      let f = self.s.pushForce;
+      let r = self.s.retreatSpeed;
 
       if (self.s.retreating == false) {
 
         if (self.phase != 'begin' && self.phase != 'pushing') {
           self.switchMessage('pushing');
         }
+        self.score++;
+        self.s.bottom += f;
+        self.s.left += f;
 
-        self.s.bottom += m;
-        self.s.left += m;
-
-        self.r.bottom += m;
-        self.r.left += m;
+        self.r.bottom += f;
+        self.r.left += f;
         
         if (self.r.left > 70) {
           self.r.bottom = 2;
@@ -64,8 +46,8 @@ var app = new Vue({
         }
 
       } else if (self.s.retreating == true) {
-        self.s.bottom -= (m * 1.6);
-        self.s.left -= (m * 1.6);
+        self.s.bottom -= r;
+        self.s.left -= r;
         if (self.phase != 'retreat') {
           self.switchMessage('retreat');
         }
@@ -78,11 +60,27 @@ var app = new Vue({
       } 
     },
 
-    buyItem(i,id) {
+    buyItem(i,item) {
       let self = this;
-      let n = self.store[i];
-      self.inventory.push(n);
-      self.store.splice(i,1);
+      
+      if (self.score >= item.price) {
+        self.score -= item.price;
+        let n = self.store[i];
+        self.inventory.push(n);
+        self.store.splice(i,1);
+        self.buyItemEffect(item.id);
+      }
+      
+    },
+
+    buyItemEffect(id) {
+      let self = this;
+      if (id == 1) { // Fresh Kicks
+        self.s.pushForce = (self.s.pushForce * 3);
+      } else if (id == 2) {
+        self.r.height = (self.r.height * 0.85);
+        self.r.width = (self.r.width * 0.85);
+      }
     },
 
     switchMessage(m) {
@@ -103,6 +101,12 @@ var app = new Vue({
     rockLeft() {
       return 'calc('+this.s.width+'% + '+this.r.left+'%)';
     },
+    rockHeight() {
+      return this.r.height+'%';
+    },
+    rockWidth() {
+      return this.r.width+'%';
+    }
 
   }
 

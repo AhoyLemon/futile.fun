@@ -1,0 +1,7 @@
+aside.inventory(v-cloak v-if="inventory.length > 0")
+  .header Your Inventory
+  .inner
+    .item.animated.bounceInUp(v-for="item in inventory")
+      .name {{item.name}}
+      .desc {{item.desc}}
+      .price {{item.price}}

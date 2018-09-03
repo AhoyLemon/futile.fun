@@ -1,17 +1,16 @@
-const settings = {
-  stepsToCheese: 8,
-  warmUpRounds: 3
+const sDefaults = {
+  bottom: 0,
+  left:0,
+  width: 3,
+  height:8,
+  retreating: false,
+  pushForce: 1.6,
+  retreatSpeed: 2.4
 };
 
-
-const correctHeadlines = [
-  "Great guess!", "You're right!", "Yes!", "Excellent!", "Good job!", "Nice!", "Work it!"
-];
-
-const closeHeadlines = [
-  "Close enough!", "Pretty close", "Pretty much!"
-];
-
-const wrongHeadlines = [
-  "No!!!", "Wrong!", "That is incorrect!", "You are wrong!", "Incorrect!"
-];
+const rDefaults = {
+  bottom: 2,
+  left:0,
+  width: 17,
+  height: 17
+};

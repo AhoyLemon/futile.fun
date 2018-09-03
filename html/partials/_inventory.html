@@ -1,0 +1,9 @@
+
+<aside class="inventory" v-cloak="v-cloak" v-if="inventory.length &gt; 0">
+  <div class="header">Your Inventory</div>
+  <div class="item" v-for="item in inventory">
+    <div class="name">{{item.name}}</div>
+    <div class="desc">{{item.desc}}</div>
+    <div class="price">{{item.price}}</div>
+  </div>
+</aside>

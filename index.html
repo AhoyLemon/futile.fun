@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta http-equiv="last-modified" content="2018-08-01@20:04:51">
+    <meta http-equiv="last-modified" content="2018-08-02@12:12:50">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Averia+Libre:300i,400,400i,700">
-    <link href="css/sisyphus.css?lastUpdated=2018-08-01@20:04:51" rel="stylesheet">
+    <link href="css/sisyphus.css?lastUpdated=2018-08-02@12:12:50" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -37,29 +37,33 @@
   </head>
   <body>
     <div id="app">
-      <aside class="inventory" v-cloak v-if="inventory.length &gt; 0">
-        <div class="header">Your Inventory</div>
-        <div class="item" v-for="item in inventory">
-          <div class="name">{{item.name}}</div>
-          <div class="desc">{{item.desc}}</div>
-          <div class="price">{{item.price}}</div>
-        </div>
-      </aside>
       <main v-cloak>
         <div class="scene">
           <figure>
             <div class="hill"><a class="sisyphys" @click="sisyphusClick()" :style="{ bottom: s.bottom +'%', left: s.left+'%', width:s.width+'%', height:s.height+'%' }"></a>
-              <div class="rock" :style="{ bottom:r.bottom+'%', left:rockLeft}" :class="{ falling: r.falling }"></div>
+              <div class="rock" :style="{ bottom:r.bottom+'%', left:rockLeft, width:rockWidth, height:rockHeight }" :class="{ falling: r.falling }"></div>
             </div>
           </figure>
           <figcaption v-text="message"></figcaption>
         </div>
       </main>
       <aside class="store" v-cloak v-if="store.length &gt; 0">
-        <div class="header">Buy Upgrades</div><a class="item" v-for="item,i in store" @click="buyItem(i,item.id)">
-          <div class="name">{{item.name}}</div>
-          <div class="desc">{{item.desc}}</div>
-          <div class="price">{{item.price}}</div></a>
+        <div class="header">Buy Upgrades</div>
+        <div class="animated zoomInDown" v-if="score &gt; (item.price * 0.5)" v-for="item,i in store" @click="buyItem(i,item)"><a class="item" v-bind:class="{ buyable: score &gt;= item.price}">
+            <div class="name">{{item.name}}</div>
+            <div class="desc">{{item.desc}}</div>
+            <div class="price">{{item.price}}</div></a></div>
+        <div class="score-hud" v-if="score &gt; -1"><span class="label">Score</span><span class="count" v-text="score"></span></div>
+      </aside>
+      <aside class="inventory" v-cloak v-if="inventory.length &gt; 0">
+        <div class="header">Your Inventory</div>
+        <div class="inner">
+          <div class="item animated bounceInUp" v-for="item in inventory">
+            <div class="name">{{item.name}}</div>
+            <div class="desc">{{item.desc}}</div>
+            <div class="price">{{item.price}}</div>
+          </div>
+        </div>
       </aside>
     </div>
     <div class="javascripts">
