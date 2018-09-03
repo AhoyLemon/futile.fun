@@ -84,7 +84,7 @@ var app = new Vue({
       let self = this;
       if (id == 1) { // Fresh Kicks
         self.s.pushForce = (self.s.pushForce * 1.01);
-        self.s.retreatSpeed = (self.s.pushForce * 1.7);
+        self.s.retreatSpeed = (self.s.retreatSpeed * 1.3);
       } else if (id == 2) { // small pickaxe
         self.r.height = (self.r.height * 0.85);
         self.r.width = (self.r.width * 0.85);
@@ -97,8 +97,14 @@ var app = new Vue({
         self.s.pushForce = (self.s.pushForce * 2);
       } else if (id == 5) { // peach tea
         // does nothing
-
+      } else if (id == 6) { // turkey sandwich
+        self.s.pushForce = (self.s.pushForce * 3);
+      } else if (id == 7) { // turkey sandwich
+        self.s.pushForce = 50;
+      } else if (id == 8) { // rancid taco
+        self.s.pushForce = -2;
       }
+      
     },
 
     switchMessage(m) {
