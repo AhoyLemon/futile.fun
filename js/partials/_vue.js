@@ -102,7 +102,7 @@ var app = new Vue({
       } else if (id == 7) { // turkey sandwich
         self.s.pushForce = 50;
       } else if (id == 8) { // rancid taco
-        self.s.pushForce = -2;
+        self.s.pushForce = -1.2;
       }
       
     },
@@ -111,11 +111,11 @@ var app = new Vue({
       let self = this;
       self.phase = m;
       if (m == 'falling') {
-        self.message = "Uh oh!";
+        self.message = randomFrom(rockFellMessages);
       } else if (m == "retreat") {
-        self.message = "Go back and get it.";
+        self.message = randomFrom(retreatMessages);
       } else if (m == "pushing") {
-        self.message = "Keep going.";
+        self.message = randomFrom(keepPushingMessages);
       }
     }
 
