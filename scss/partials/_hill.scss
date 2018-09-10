@@ -7,14 +7,22 @@ $scene: ($rock * 5);
 .scene { width:$scene;
   figure { height:$scene; background:#999; position: relative; overflow: hidden;
 
-    .sisyphys { display: block; position: absolute; z-index: 4; cursor: pointer; transition:all 0.3s ease; color:black; background:transparent; border:none; padding:0; outline:none;
+    .background { @include position(absolute,0,0,0,0); background-image:url(../svg/background.svg); background-size:cover; background-position: center left; z-index: $z-background; }
+    .hill { @include position(absolute,0,0,0,0); background-image:url(../svg/hill.svg); background-size:cover; background-position: bottom left; z-index: $z-hill; }
+    .shine { @include position(absolute,0,0,0,0); background-image:url(../svg/shine.svg); background-size:cover; background-position: top right; z-index: $z-shine; }
+
+
+    .sisyphys { display: block; position: absolute; z-index: $z-sisyphus; cursor: pointer; transition:all 0.3s ease; color:black; background:transparent; border:none; padding:0; outline:none;
+      .st0{fill:#efa547}.st1{fill:#0b191e}.st2{fill:#f8c977} 
       //background-image:url(../svg/pusher.svg); background-position: bottom right; background-size:contain; background-repeat: no-repeat;
       //svg * { fill:currentColor; }
-      &:hover svg * { fill:darkblue; }
+      //&:hover svg * { fill:darkblue; }
     }
-    .rock { width:$rock; height:$rock; position: absolute; background:beige; border-radius:50%; transition: all 0.3s ease; transition-delay:0.1s;
+    .rock { width:$rock; height:$rock; position: absolute; background:#ED6F4B; border-radius:50%; transition: all 0.3s ease; transition-delay:0.1s; z-index: $z-rock;
       &.falling { transition-duration: 2s; transition-timing-function: cubic-bezier(.32,.39,.47,1.04); }
     }
+
+    .foreground { @include position(absolute,0,0,0,0); background-image:url(../svg/foreground.svg); background-size:cover; background-position: bottom left; z-index: $z-foreground; pointer-events: none; }
   }
   figcaption { color:white; font-size:2.5vw; text-align: center; padding-top: 0.25em; font-family: $headline; }
 }

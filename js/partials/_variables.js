@@ -1,12 +1,12 @@
 
 const begin = {
   s: {
-    bottom: 0,
-    left: 2
+    bottom: 3,
+    left: 5
   },
   r: {
-    bottom: 3,
-    left:2
+    bottom: 8.5,
+    left:4
   }
 };
 
@@ -14,8 +14,8 @@ const begin = {
 const sDefaults = {
   bottom: begin.s.bottom,
   left:begin.s.left,
-  width: 2.4,
-  height:7,
+  width: 6,
+  height:9,
   retreating: false,
   pushForce: 1.6,
   retreatSpeed: 2.6

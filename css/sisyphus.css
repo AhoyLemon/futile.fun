@@ -2637,10 +2637,40 @@ main {
     background: #999;
     position: relative;
     overflow: hidden; }
+    .scene figure .background {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-image: url(../svg/background.svg);
+      background-size: cover;
+      background-position: center left;
+      z-index: 2; }
+    .scene figure .hill {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-image: url(../svg/hill.svg);
+      background-size: cover;
+      background-position: bottom left;
+      z-index: 3; }
+    .scene figure .shine {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-image: url(../svg/shine.svg);
+      background-size: cover;
+      background-position: top right;
+      z-index: 5; }
     .scene figure .sisyphys {
       display: block;
       position: absolute;
-      z-index: 4;
+      z-index: 5;
       cursor: pointer;
       -webkit-transition: all 0.3s ease;
       -o-transition: all 0.3s ease;
@@ -2650,20 +2680,25 @@ main {
       border: none;
       padding: 0;
       outline: none; }
-      .scene figure .sisyphys:hover svg * {
-        fill: darkblue; }
+      .scene figure .sisyphys .st0 {
+        fill: #efa547; }
+      .scene figure .sisyphys .st1 {
+        fill: #0b191e; }
+      .scene figure .sisyphys .st2 {
+        fill: #f8c977; }
     .scene figure .rock {
       width: 8vw;
       height: 8vw;
       position: absolute;
-      background: beige;
+      background: #ED6F4B;
       border-radius: 50%;
       -webkit-transition: all 0.3s ease;
       -o-transition: all 0.3s ease;
       transition: all 0.3s ease;
       -webkit-transition-delay: 0.1s;
       -o-transition-delay: 0.1s;
-      transition-delay: 0.1s; }
+      transition-delay: 0.1s;
+      z-index: 4; }
       .scene figure .rock.falling {
         -webkit-transition-duration: 2s;
         -o-transition-duration: 2s;
@@ -2671,6 +2706,17 @@ main {
         -webkit-transition-timing-function: cubic-bezier(0.32, 0.39, 0.47, 1.04);
         -o-transition-timing-function: cubic-bezier(0.32, 0.39, 0.47, 1.04);
         transition-timing-function: cubic-bezier(0.32, 0.39, 0.47, 1.04); }
+    .scene figure .foreground {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-image: url(../svg/foreground.svg);
+      background-size: cover;
+      background-position: bottom left;
+      z-index: 6;
+      pointer-events: none; }
   .scene figcaption {
     color: white;
     font-size: 2.5vw;
