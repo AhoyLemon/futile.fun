@@ -2649,6 +2649,28 @@ main {
     background-repeat: no-repeat;
     background-color: lime; }
 
+@-webkit-keyframes shift_background {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0); }
+  50% {
+    -webkit-transform: translateX(-70%);
+    transform: translateX(-70%); }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0); } }
+
+@keyframes shift_background {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0); }
+  50% {
+    -webkit-transform: translateX(-70%);
+    transform: translateX(-70%); }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0); } }
+
 .scene {
   width: 40vw; }
   .scene figure {
@@ -2743,11 +2765,14 @@ main {
       background-repeat: repeat-x;
       z-index: 6;
       pointer-events: none;
-      -webkit-transition: -webkit-transform 1.2s linear;
-      transition: -webkit-transform 1.2s linear;
-      -o-transition: transform 1.2s linear;
-      transition: transform 1.2s linear;
-      transition: transform 1.2s linear, -webkit-transform 1.2s linear; }
+      -webkit-animation-name: shift_background;
+      animation-name: shift_background;
+      -webkit-animation-duration: 360s;
+      animation-duration: 360s;
+      -webkit-animation-iteration-count: infinite;
+      animation-iteration-count: infinite;
+      -webkit-animation-timing-function: linear;
+      animation-timing-function: linear; }
   .scene figcaption {
     color: white;
     font-size: 2.5vw;

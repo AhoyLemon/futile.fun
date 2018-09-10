@@ -8,6 +8,12 @@ $scene: ($rock * 5);
   .inner { @include position(absolute,0,null,0,0); width:285%; background-image:url(../svg/background.svg); background-position: bottom left; background-size:contain; background-repeat: no-repeat; background-color:lime; }
 }
 
+@keyframes shift_background {
+  0%      {transform: translateX(0);   }
+  50%   {transform: translateX(-70%); }
+  100%   {transform: translateX(0); }
+}
+
 .scene { width:$scene;
   figure { height:$scene; background:#999; position: relative; overflow: hidden;
 
@@ -29,8 +35,14 @@ $scene: ($rock * 5);
     }
 
     .foreground { @include position(absolute,0,null,0,0); width:450%; background-image:url(../svg/foreground.svg); background-size:cover; background-position: bottom left; background-repeat: repeat-x; z-index: $z-foreground; pointer-events: none;
-      transition:transform 1.2s linear;
+      //transition:transform 1.2s linear;
+
+      animation-name: shift_background; animation-duration: 360s; animation-iteration-count: infinite; animation-timing-function: linear;
+      
+
+
     }
   }
   figcaption { color:white; font-size:2.5vw; text-align: center; padding-top: 0.25em; font-family: $headline; }
 }
+
