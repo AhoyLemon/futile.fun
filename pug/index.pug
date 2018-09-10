@@ -15,6 +15,12 @@ html(lang="en")
     #app
     
       main(v-cloak)
+
+
+        .test
+          .inner
+
+
         .scene
           figure
             .background
@@ -54,7 +60,7 @@ html(lang="en")
 
               
             .rock(:style="{ bottom:r.bottom+'%', left:rockLeft, width:rockWidth, height:rockHeight, marginLeft:rockMarginLeft }" :class="{ falling: r.falling }" )
-            .foreground
+            .foreground(:style="{transform: foregroundTransform}")
           figcaption(v-text="message")
 
       include partials/_store.pug

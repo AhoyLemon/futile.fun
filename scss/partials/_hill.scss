@@ -4,6 +4,10 @@ main { height: 99vh; @include flex-center(); font-family: $font; }
 $rock: 8vw;
 $scene: ($rock * 5);
 
+.test { height:100px; width: 100px; overflow: visible; z-index: 100; position: relative; display: none;
+  .inner { @include position(absolute,0,null,0,0); width:450%; background-image:url(../svg/foreground.svg); background-position: bottom left; background-size:contain; background-repeat: no-repeat; background-color:lime; }
+}
+
 .scene { width:$scene;
   figure { height:$scene; background:#999; position: relative; overflow: hidden;
 
@@ -22,7 +26,9 @@ $scene: ($rock * 5);
       &.falling { transition-duration: 2s; transition-timing-function: cubic-bezier(.32,.39,.47,1.04); }
     }
 
-    .foreground { @include position(absolute,0,0,0,0); background-image:url(../svg/foreground.svg); background-size:cover; background-position: bottom left; z-index: $z-foreground; pointer-events: none; }
+    .foreground { @include position(absolute,0,null,0,0); width:450%; background-image:url(../svg/foreground.svg); background-size:cover; background-position: bottom left; background-repeat: no-repeat; z-index: $z-foreground; pointer-events: none;
+      transition:transform 1s linear;
+    }
   }
   figcaption { color:white; font-size:2.5vw; text-align: center; padding-top: 0.25em; font-family: $headline; }
 }

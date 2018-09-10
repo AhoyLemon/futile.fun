@@ -15,6 +15,9 @@ var app = new Vue({
     totalScore: 0,
     s: sDefaults,
     r: rDefaults,
+    fg: {
+      transform:0
+    },
     store: storeItems,
     inventory: []
   },
@@ -25,6 +28,7 @@ var app = new Vue({
       let self = this;
       let f = self.s.pushForce;
       let r = self.s.retreatSpeed;
+      let fT = self.s.pushForce;
 
       if (self.s.retreating == false) {
 
@@ -38,6 +42,10 @@ var app = new Vue({
 
         self.r.bottom += f;
         self.r.left += f;
+
+
+        //forground transform
+        self.fg.transform -= fT;
         
         if (self.r.left > 70) {
           self.r.bottom = begin.r.bottom;
@@ -50,6 +58,11 @@ var app = new Vue({
       } else if (self.s.retreating == true) {
         self.s.bottom -= r;
         self.s.left -= r;
+
+        //forground transform
+        self.fg.transform += fT;
+
+
         if (self.phase != 'retreat') {
           self.switchMessage('retreat');
         }
@@ -133,7 +146,11 @@ var app = new Vue({
     },
     rockMarginLeft() {
       return this.r.marginLeft+'%';
+    },
+    foregroundTransform() {
+      return 'translateX('+this.fg.transform+'%)';
     }
+
 
   }
 

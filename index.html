@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta http-equiv="last-modified" content="2018-08-09@22:46:01">
+    <meta http-equiv="last-modified" content="2018-08-09@23:06:10">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,700|Eczar:400,700|Poppins:400,400i,700  ">
-    <link href="css/sisyphus.css?lastUpdated=2018-08-09@22:46:01" rel="stylesheet">
+    <link href="css/sisyphus.css?lastUpdated=2018-08-09@23:06:10" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -38,6 +38,9 @@
   <body>
     <div id="app">
       <main v-cloak>
+        <div class="test">
+          <div class="inner"></div>
+        </div>
         <div class="scene">
           <figure>
             <div class="background"></div>
@@ -79,7 +82,7 @@
               </svg>
             </button>
             <div class="rock" :style="{ bottom:r.bottom+'%', left:rockLeft, width:rockWidth, height:rockHeight, marginLeft:rockMarginLeft }" :class="{ falling: r.falling }"></div>
-            <div class="foreground"></div>
+            <div class="foreground" :style="{transform: foregroundTransform}"></div>
           </figure>
           <figcaption v-text="message"></figcaption>
         </div>
