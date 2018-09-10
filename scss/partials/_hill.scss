@@ -37,7 +37,7 @@ $scene: ($rock * 5);
     .foreground { @include position(absolute,0,null,0,0); width:450%; background-image:url(../svg/foreground.svg); background-size:cover; background-position: bottom left; background-repeat: repeat-x; z-index: $z-foreground; pointer-events: none;
       //transition:transform 1.2s linear;
 
-      animation-name: shift_background; animation-duration: 360s; animation-iteration-count: infinite; animation-timing-function: linear;
+      animation-name: shift_background; animation-duration: 1000s; animation-iteration-count: infinite; animation-timing-function: linear;
       
 
 

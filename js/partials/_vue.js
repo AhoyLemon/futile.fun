@@ -32,7 +32,7 @@ var app = new Vue({
       let f = self.s.pushForce;
       let r = self.s.retreatSpeed;
       let fT = (self.s.pushForce * 0.6);
-      let bT = (self.s.pushForce * 0.5);
+      let bT = (self.s.pushForce * 0.65);
 
       if (self.s.retreating == false) {
 
@@ -77,6 +77,8 @@ var app = new Vue({
           self.s.bottom = begin.s.bottom;
           self.s.left = begin.s.left;
           self.r.falling = false;
+          self.fg.transform = 0;
+          self.bg.transform = 0;
         }
       } 
     },
