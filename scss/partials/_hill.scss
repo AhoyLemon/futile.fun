@@ -14,7 +14,7 @@ $scene: ($rock * 5);
   100%   {transform: translateX(0); }
 }
 
-.scene { width:$scene;
+.scene { width:$scene; position: relative;
   figure { height:$scene; background:#999; position: relative; overflow: hidden;
 
     .background { @include position(absolute,0,null,0,0); background-image:url(../svg/background.svg); background-size:cover; background-position: center left; background-repeat: repeat-x; z-index: $z-background;
@@ -43,6 +43,15 @@ $scene: ($rock * 5);
 
     }
   }
+
+  .pillar { @include position(absolute,0); height: ($scene * 1.2); width: ($scene / 3.8); z-index: $z-pillar;
+    &.one { left:0; transform: translate(-75%,-5%); }
+    &.two { right:0; transform: translate(75%,-5%); }
+  }
+
+
   figcaption { color:white; font-size:2.5vw; text-align: center; padding-top: 0.25em; font-family: $headline; }
 }
+
+
 

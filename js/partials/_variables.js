@@ -2,7 +2,7 @@
 const begin = {
   s: {
     bottom: 3,
-    left: 5
+    left: 5.7
   },
   r: {
     bottom: 8.5,

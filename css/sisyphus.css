@@ -2672,7 +2672,8 @@ main {
     transform: translateX(0); } }
 
 .scene {
-  width: 40vw; }
+  width: 40vw;
+  position: relative; }
   .scene figure {
     height: 40vw;
     background: #999;
@@ -2773,6 +2774,22 @@ main {
       animation-iteration-count: infinite;
       -webkit-animation-timing-function: linear;
       animation-timing-function: linear; }
+  .scene .pillar {
+    position: absolute;
+    top: 0;
+    height: 48vw;
+    width: 10.52632vw;
+    z-index: 7; }
+    .scene .pillar.one {
+      left: 0;
+      -webkit-transform: translate(-75%, -5%);
+      -ms-transform: translate(-75%, -5%);
+      transform: translate(-75%, -5%); }
+    .scene .pillar.two {
+      right: 0;
+      -webkit-transform: translate(75%, -5%);
+      -ms-transform: translate(75%, -5%);
+      transform: translate(75%, -5%); }
   .scene figcaption {
     color: white;
     font-size: 2.5vw;

@@ -62,7 +62,13 @@ html(lang="en")
             .rock(:style="{ bottom:r.bottom+'%', left:rockLeft, width:rockWidth, height:rockHeight, marginLeft:rockMarginLeft }" :class="{ falling: r.falling }" )
             //-.foreground(:style="{transform: foregroundTransform}")
             .foreground
+        
+          .pillar.one
+            img(src="svg/pillar-1.svg")
+          .pillar.two
+            img(src="svg/pillar-2.svg")
           figcaption(v-text="message")
+          
 
       include partials/_store.pug
       include partials/_inventory.pug
