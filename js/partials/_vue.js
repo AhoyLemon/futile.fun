@@ -18,6 +18,9 @@ var app = new Vue({
     fg: {
       transform:0
     },
+    bg: {
+      transform:0
+    },
     store: storeItems,
     inventory: []
   },
@@ -28,7 +31,8 @@ var app = new Vue({
       let self = this;
       let f = self.s.pushForce;
       let r = self.s.retreatSpeed;
-      let fT = self.s.pushForce;
+      let fT = (self.s.pushForce * 0.6);
+      let bT = (self.s.pushForce * 0.5);
 
       if (self.s.retreating == false) {
 
@@ -46,6 +50,7 @@ var app = new Vue({
 
         //forground transform
         self.fg.transform -= fT;
+        self.bg.transform -= bT;
         
         if (self.r.left > 70) {
           self.r.bottom = begin.r.bottom;
@@ -61,6 +66,7 @@ var app = new Vue({
 
         //forground transform
         self.fg.transform += fT;
+        self.bg.transform += bT;
 
 
         if (self.phase != 'retreat') {
@@ -149,7 +155,11 @@ var app = new Vue({
     },
     foregroundTransform() {
       return 'translateX('+this.fg.transform+'%)';
+    },
+    backgroundTransform() {
+      return 'translateX('+this.bg.transform+'%)';
     }
+
 
 
   }

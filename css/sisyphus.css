@@ -2642,8 +2642,8 @@ main {
     top: 0;
     bottom: 0;
     left: 0;
-    width: 450%;
-    background-image: url(../svg/foreground.svg);
+    width: 285%;
+    background-image: url(../svg/background.svg);
     background-position: bottom left;
     background-size: contain;
     background-repeat: no-repeat;
@@ -2659,13 +2659,19 @@ main {
     .scene figure .background {
       position: absolute;
       top: 0;
-      right: 0;
       bottom: 0;
       left: 0;
       background-image: url(../svg/background.svg);
       background-size: cover;
       background-position: center left;
-      z-index: 2; }
+      background-repeat: repeat-x;
+      z-index: 2;
+      width: 220%;
+      -webkit-transition: -webkit-transform 1.5s linear;
+      transition: -webkit-transform 1.5s linear;
+      -o-transition: transform 1.5s linear;
+      transition: transform 1.5s linear;
+      transition: transform 1.5s linear, -webkit-transform 1.5s linear; }
     .scene figure .hill {
       position: absolute;
       top: 0;
@@ -2734,14 +2740,14 @@ main {
       background-image: url(../svg/foreground.svg);
       background-size: cover;
       background-position: bottom left;
-      background-repeat: no-repeat;
+      background-repeat: repeat-x;
       z-index: 6;
       pointer-events: none;
-      -webkit-transition: -webkit-transform 1s linear;
-      transition: -webkit-transform 1s linear;
-      -o-transition: transform 1s linear;
-      transition: transform 1s linear;
-      transition: transform 1s linear, -webkit-transform 1s linear; }
+      -webkit-transition: -webkit-transform 1.2s linear;
+      transition: -webkit-transform 1.2s linear;
+      -o-transition: transform 1.2s linear;
+      transition: transform 1.2s linear;
+      transition: transform 1.2s linear, -webkit-transform 1.2s linear; }
   .scene figcaption {
     color: white;
     font-size: 2.5vw;

@@ -5,13 +5,15 @@ $rock: 8vw;
 $scene: ($rock * 5);
 
 .test { height:100px; width: 100px; overflow: visible; z-index: 100; position: relative; display: none;
-  .inner { @include position(absolute,0,null,0,0); width:450%; background-image:url(../svg/foreground.svg); background-position: bottom left; background-size:contain; background-repeat: no-repeat; background-color:lime; }
+  .inner { @include position(absolute,0,null,0,0); width:285%; background-image:url(../svg/background.svg); background-position: bottom left; background-size:contain; background-repeat: no-repeat; background-color:lime; }
 }
 
 .scene { width:$scene;
   figure { height:$scene; background:#999; position: relative; overflow: hidden;
 
-    .background { @include position(absolute,0,0,0,0); background-image:url(../svg/background.svg); background-size:cover; background-position: center left; z-index: $z-background; }
+    .background { @include position(absolute,0,null,0,0); background-image:url(../svg/background.svg); background-size:cover; background-position: center left; background-repeat: repeat-x; z-index: $z-background;
+      width: 220%; transition:transform 1.5s linear;
+    }
     .hill { @include position(absolute,0,0,0,0); background-image:url(../svg/hill.svg); background-size:cover; background-position: bottom left; z-index: $z-hill; }
     .shine { @include position(absolute,0,0,0,0); background-image:url(../svg/shine.svg); background-size:cover; background-position: top right; z-index: $z-shine; }
 
@@ -26,8 +28,8 @@ $scene: ($rock * 5);
       &.falling { transition-duration: 2s; transition-timing-function: cubic-bezier(.32,.39,.47,1.04); }
     }
 
-    .foreground { @include position(absolute,0,null,0,0); width:450%; background-image:url(../svg/foreground.svg); background-size:cover; background-position: bottom left; background-repeat: no-repeat; z-index: $z-foreground; pointer-events: none;
-      transition:transform 1s linear;
+    .foreground { @include position(absolute,0,null,0,0); width:450%; background-image:url(../svg/foreground.svg); background-size:cover; background-position: bottom left; background-repeat: repeat-x; z-index: $z-foreground; pointer-events: none;
+      transition:transform 1.2s linear;
     }
   }
   figcaption { color:white; font-size:2.5vw; text-align: center; padding-top: 0.25em; font-family: $headline; }
