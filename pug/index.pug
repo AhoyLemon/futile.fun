@@ -67,7 +67,8 @@ html(lang="en")
             img(src="svg/pillar-1.svg")
           .pillar.two
             img(src="svg/pillar-2.svg")
-          figcaption(v-text="message")
+          figcaption(v-if="message")
+            .inner(v-text="message")
           
 
       include partials/_store.pug

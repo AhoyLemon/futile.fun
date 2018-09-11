@@ -50,7 +50,10 @@ $scene: ($rock * 5);
   }
 
 
-  figcaption { color:white; font-size:2.5vw; text-align: center; padding-top: 0.25em; font-family: $headline; }
+  figcaption { color:#272128; font-size:2.5vw; text-align: center; font-family: $headline; background-image:url(../svg/placard.svg); background-position: center; background-size:contain; background-repeat: no-repeat; height: 2.5em; 
+    @include flex-center(); line-height: 75%; position: relative; z-index: $z-figcaption; transform: translateY(-20%);
+    //position: absolute;
+  }
 }
 
 

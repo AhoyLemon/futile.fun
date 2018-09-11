@@ -2779,7 +2779,7 @@ main {
     top: 0;
     height: 48vw;
     width: 10.52632vw;
-    z-index: 7; }
+    z-index: 8; }
     .scene .pillar.one {
       left: 0;
       -webkit-transform: translate(-75%, -5%);
@@ -2791,11 +2791,40 @@ main {
       -ms-transform: translate(75%, -5%);
       transform: translate(75%, -5%); }
   .scene figcaption {
-    color: white;
+    color: #272128;
     font-size: 2.5vw;
     text-align: center;
-    padding-top: 0.25em;
-    font-family: "Crimson Text", serif; }
+    font-family: "Crimson Text", serif;
+    background-image: url(../svg/placard.svg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 2.5em;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    line-height: 75%;
+    position: relative;
+    z-index: 7;
+    -webkit-transform: translateY(-20%);
+    -ms-transform: translateY(-20%);
+    transform: translateY(-20%); }
 
 aside.store {
   position: fixed;
