@@ -2826,6 +2826,15 @@ main {
     -ms-transform: translateY(-25%);
     transform: translateY(-25%); }
 
+.ui-pnotify .brighttheme.ui-pnotify-container {
+  padding-left: 100px; }
+  .ui-pnotify .brighttheme.ui-pnotify-container .ui-pnotify-title {
+    font-family: "Crimson Text", serif;
+    font-size: 1.4rem;
+    margin-bottom: 0; }
+  .ui-pnotify .brighttheme.ui-pnotify-container .ui-pnotify-text {
+    font-family: "Poppins", sans-serif; }
+
 aside.store {
   position: fixed;
   top: 0;

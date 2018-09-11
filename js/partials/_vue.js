@@ -23,6 +23,7 @@ var app = new Vue({
     },
     store: storeItems,
     inventory: []
+
   },
 
   methods: {
@@ -51,7 +52,8 @@ var app = new Vue({
         bT = (self.s.pushForce * 0.75);
         self.bg.transform -= bT;
         
-        if (self.r.left > 70) {
+        //alert(self.r.peak);
+        if (self.r.left >= self.r.peak) {
           self.r.bottom = begin.r.bottom;
           self.r.left = begin.r.left;
           self.r.falling = true;
@@ -70,6 +72,7 @@ var app = new Vue({
 
         if (self.phase != 'retreat') {
           self.switchMessage('retreat');
+          self.r.peak = randomNumber(55,75);
         }
         if (self.s.bottom <= begin.s.bottom || self.s.left <= begin.s.left) {
           self.s.retreating = false;
@@ -160,10 +163,30 @@ var app = new Vue({
     },
     backgroundTransform() {
       return 'translateX('+this.bg.transform+'%)';
+    },
+
+
+    availableUpgrades() {
+      let self = this;
+      let a = [];
+      self.store.forEach(function(item,i) {
+        if (self.totalScore > (item.price * 0.9)) {
+          a.push(item);
+        }
+      });
+      return a;
     }
 
 
 
+  },
+
+  mounted: function() {
+    new PNotify({
+      title: 'Regular Notice',
+      text: 'Check me out! I\'m a notice.',
+      hide: false
+    });
   }
 
 });

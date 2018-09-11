@@ -10,12 +10,12 @@ const storeItems = [
     showDesc: false
   },
   {
-    id: 3, name: "a whole bunch of gum", price: 40,
+    id: 3, name: "a whole bunch of gum", price: 50,
     desc: "Gum, and like, a considerable amount of it. Enough to stick to the boulder to make the boulder bigger and possibly stick to the hill.",
     showDesc: false
   },
   {
-    id: 4, name: "analgesic heat rub", price: 60,
+    id: 4, name: "analgesic heat rub", price: 70,
     desc: "Smells terrible! But should allow you to push to boulder a little bit faster.",
     showDesc: false
   },

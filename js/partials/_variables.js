@@ -6,7 +6,8 @@ const begin = {
   },
   r: {
     bottom: 8.5,
-    left:4
+    left:4,
+    peak: 80
   }
 };
 
@@ -26,5 +27,6 @@ const rDefaults = {
   left:begin.r.left,
   width: 17,
   height: 17,
-  marginLeft: -3.6
+  marginLeft: -3.6,
+  peak: 74
 };
