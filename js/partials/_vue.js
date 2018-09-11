@@ -10,7 +10,7 @@ var app = new Vue({
   el: '#app',
   data: {
     phase: 'begin',
-    message: 'Help Sisyphus push the rock uphill.',
+    message: 'Click Sisyphus to push the rock uphill.',
     score: 0,
     totalScore: 0,
     s: sDefaults,
@@ -31,8 +31,7 @@ var app = new Vue({
       let self = this;
       let f = self.s.pushForce;
       let r = self.s.retreatSpeed;
-      let fT = (self.s.pushForce * 0.6);
-      let bT = (self.s.pushForce * 0.65);
+      let bT;
 
       if (self.s.retreating == false) {
 
@@ -48,8 +47,8 @@ var app = new Vue({
         self.r.left += f;
 
 
-        //forground transform
-        self.fg.transform -= fT;
+        //background transform
+        bT = (self.s.pushForce * 0.75);
         self.bg.transform -= bT;
         
         if (self.r.left > 70) {
@@ -65,7 +64,7 @@ var app = new Vue({
         self.s.left -= r;
 
         //forground transform
-        self.fg.transform += fT;
+        bT = (self.s.retreatSpeed * 0.75);
         self.bg.transform += bT;
 
 
@@ -115,15 +114,16 @@ var app = new Vue({
         self.r.width = (self.r.width * 1.15);
         self.s.pushForce = (self.s.pushForce * 0.5);
       } else if (id == 4) { // analgesic
-        self.s.pushForce = (self.s.pushForce * 2);
+        self.s.pushForce = (self.s.pushForce * 1.35);
       } else if (id == 5) { // peach tea
         // does nothing
-      } else if (id == 6) { // turkey sandwich
-        self.s.pushForce = (self.s.pushForce * 3);
+      } else if (id == 6) { // heelies
+        self.s.pushForce = (self.s.pushForce * 0.85);
+        self.s.retreatSpeed = (self.s.retreatSpeed * 1.4);
       } else if (id == 7) { // turkey sandwich
-        self.s.pushForce = 50;
+        
       } else if (id == 8) { // rancid taco
-        self.s.pushForce = -1.2;
+        
       }
       
     },

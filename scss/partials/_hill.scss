@@ -50,8 +50,8 @@ $scene: ($rock * 5);
   }
 
 
-  figcaption { color:#272128; font-size:2.5vw; text-align: center; font-family: $headline; background-image:url(../svg/placard.svg); background-position: center; background-size:contain; background-repeat: no-repeat; height: 2.5em; 
-    @include flex-center(); line-height: 75%; position: relative; z-index: $z-figcaption; transform: translateY(-20%);
+  figcaption { color:#272128; font-size:2.2vw; text-align: center; font-family: $headline; background-image:url(../svg/placard.svg); background-position: center; background-size:contain; background-repeat: no-repeat; height: 3em; 
+    @include flex-center(); line-height: 75%; position: relative; z-index: $z-figcaption; transform: translateY(-25%);
     //position: absolute;
   }
 }

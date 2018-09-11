@@ -2792,14 +2792,14 @@ main {
       transform: translate(75%, -5%); }
   .scene figcaption {
     color: #272128;
-    font-size: 2.5vw;
+    font-size: 2.2vw;
     text-align: center;
     font-family: "Crimson Text", serif;
     background-image: url(../svg/placard.svg);
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
-    height: 2.5em;
+    height: 3em;
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-flex;
@@ -2822,9 +2822,9 @@ main {
     line-height: 75%;
     position: relative;
     z-index: 7;
-    -webkit-transform: translateY(-20%);
-    -ms-transform: translateY(-20%);
-    transform: translateY(-20%); }
+    -webkit-transform: translateY(-25%);
+    -ms-transform: translateY(-25%);
+    transform: translateY(-25%); }
 
 aside.store {
   position: fixed;
