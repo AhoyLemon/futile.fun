@@ -13,6 +13,7 @@ var app = new Vue({
     message: 'Click Sisyphus to push the rock uphill.',
     score: 0,
     totalScore: 0,
+    secondsPlayed: 0,
     s: sDefaults,
     r: rDefaults,
     fg: {
@@ -22,7 +23,8 @@ var app = new Vue({
       transform:0
     },
     store: storeItems,
-    inventory: []
+    inventory: [],
+    cheevos: 0,
 
   },
 
@@ -141,7 +143,36 @@ var app = new Vue({
       } else if (m == "pushing") {
         self.message = randomFrom(keepPushingMessages);
       }
+    },
+
+
+    getCheevo(title,text,points) {
+      let self = this;
+      if (!title) { title  = null; }
+      if (!text) { text  = null; }
+      let t;
+      if (points) { 
+        t = '<strong>'+points+'💀</strong> '+text;
+      } else {
+        t = text;
+      }
+
+
+
+      new PNotify({
+        title: title,
+        text: t
+      });
+
+    },
+
+    everySecond() {
+      let self = this;
+      self.secondsPlayed++;
+      self.getCheevo(null, 'You have played the game for '+self.secondsPlayed+' seconds.', self.secondsPlayed);
     }
+
+
 
   },
 
@@ -182,12 +213,16 @@ var app = new Vue({
   },
 
   mounted: function() {
-
-    new PNotify({
-      title: 'Achievement Unlocked!',
-      text: "Maecenas ornare interdum eros, sit amet placerat orci auctor quis. Pellentesque iaculis diam dolor, vel porta nisi fermentum vitae. Phasellus iaculis dui arcu, in molestie mi porta sed."
-    });
+    let self = this;
+    setInterval(function () {
+      //alert('hit');
+      self.everySecond();
+    }, 1000); 
+  },
+  ready: function() {
+    let self = this;
     
+    self.everySecond();
   }
 
 });
