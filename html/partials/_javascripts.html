@@ -1,15 +1,10 @@
-.javascripts
-  
-  script(src="https://code.jquery.com/jquery-3.2.1.min.js")
 
-  if testing
-    script(src="js/libraries/vue.full.js")
-  else
-    script(src="js/libraries/vue.min.js")
-
-  script(src="js/libraries/pnotify.custom.min.js")
-  link(rel="stylesheet" href="css/libraries/pnotify.custom.min.css")
-  script.
+<div class="javascripts">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="js/libraries/vue.min.js"></script>
+  <script src="js/libraries/pnotify.custom.min.js"></script>
+  <link rel="stylesheet" href="css/libraries/pnotify.custom.min.css"/>
+  <script>
     //------ Pnotify settings & defaults ----------------
     PNotify.prototype.options.icon = false;
     var stack_bottomright = {"dir1": "up", "dir2": "left", "firstpos1": 25, "firstpos2": 25};
@@ -17,10 +12,9 @@
     PNotify.prototype.options.addclass = "stack-bottomright";
     PNotify.prototype.options.animate.animate = true;
     PNotify.prototype.options.animate.in_class = 'bounceInDown',
-    PNotify.prototype.options.animate.out_class = 'zoomOutRight';
-    PNotify.prototype.options.width = "460px";
-    PNotify.prototype.options.delay = 4000;
-
+    PNotify.prototype.options.animate.out_class = 'bounceOutDown';
+    PNotify.prototype.options.width = "600px";
+    
     PNotify.defaultStack = {
       dir1: 'down',
       dir2: 'left',
@@ -31,5 +25,7 @@
       push: 'bottom',
       context: document.body
     }
-
-  script(src="js/min/sisyphus.min.js")
+    
+  </script>
+  <script src="js/min/sisyphus.min.js"></script>
+</div>
