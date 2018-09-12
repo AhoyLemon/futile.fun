@@ -46,7 +46,7 @@ $scene: ($rock * 5);
 
   .pillar { @include position(absolute,0); height: ($scene * 1.2); width: ($scene / 3.8); z-index: $z-pillar;
     &.one { left:0; transform: translate(-75%,-5%); }
-    &.two { right:0; transform: translate(75%,-5%); }
+    &.two { right:0; transform: translate(75%,-4%); }
   }
 
 
@@ -55,19 +55,4 @@ $scene: ($rock * 5);
     //position: absolute;
   }
 }
-
-
-$notifyRadius: 3rem;
-$notifyIconSize: 60px;
-
-.ui-pnotify { 
-  .brighttheme.ui-pnotify-container { padding-left:100px; background:#414042;  border-radius: $notifyRadius; border:2px solid rgba(#121212,0.5); min-height: 5.7rem !important;
-    &:before { content: " "; width:$notifyIconSize; height:$notifyIconSize; @include position(absolute,1rem,null,null,1rem); background-image:url(../svg/trophy.svg);background-size:contain; background-repeat: no-repeat; background-position: center; }
-
-    .ui-pnotify-title { font-family:$font; font-size:1.4rem; margin-bottom: 0; color:white; }
-    .ui-pnotify-text  { font-family: $font; color:white; }
-    .ui-pnotify-closer, .ui-pnotify-sticker { color:yellow; }
-  }
-}
-
 

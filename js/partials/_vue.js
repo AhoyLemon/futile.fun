@@ -184,7 +184,9 @@ var app = new Vue({
       let self = this;
       self.secondsPlayed++;
 
-      if (self.secondsPlayed == 10) {
+      if (self.secondsPlayed == 1) {
+        self.getCheevo('Achievement Unlocked', 'You have played the game for '+self.secondsPlayed+' seconds.', 1);
+      } else if (self.secondsPlayed == 10) {
         self.getCheevo('Achievement Unlocked', 'You have played the game for '+self.secondsPlayed+' seconds.', 5);
       } else  if (self.secondsPlayed == 60) {
         self.getCheevo('One minute mark!', 'You have played the game for one minute.', 10);
@@ -233,15 +235,11 @@ var app = new Vue({
 
   mounted: function() {
     let self = this;
+
     setInterval(function () {
       //alert('hit');
       self.everySecond();
     }, 1000); 
-  },
-  ready: function() {
-    let self = this;
-    
-    self.everySecond();
   }
 
 });
