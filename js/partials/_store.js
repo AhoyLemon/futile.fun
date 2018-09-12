@@ -20,12 +20,12 @@ const storeItems = [
     showDesc: false
   },
   {
-    id: 5, name: "Peach Tea", price: 160,
+    id: 5, name: "Peach Tea", price: 160, scoreToReveal:195,
     desc: "a 20 ounce can of peach tea. Tastes pretty good. Probably won't help you with that rock pushing thing.",
     showDesc: false
   },
   {
-    id: 6, name: "Heelies", price: 140,
+    id: 6, name: "Heelies", price: 140, scoreToReveal: 235,
     desc: "You know, those shoes with the wheels on them. Will make it easier to go downhill, and probably harder to go uphill."
   },
   {
@@ -46,14 +46,14 @@ const storeItems = [
   },
   {
     id: 11, name: "Hades Haute Couture", price: 275, scoreToReveal: 220,
-    desc: "Sure you're pushing this boulder for eterinty, but that doesn't mean you can't be fashion forward while pushing forward."
+    desc: "Mainly an aesthetic of ash, chains and sackcloth that is very much de riguer in the underworld. Makes pushing the boulder significantly harder."
   },
   {
     id: 12, name: "Deus Ex Machina", price: 500, scoreToReveal: 250,
-    desc: "The gods remember you're still doing this and come down to mock you by making the boulder even heavier."
+    desc: "Having forgotten you were doing this for so long, the gods finally remember you exist, then mock you with a new heavier boulder."
   },
   {
-    id: 13, name: "Spite", price: 1, scoreToReveal: 300,
+    id: 13, name: "Spite", price: 40, scoreToReveal: 300,
     desc: "Your greatest resource!"
   },
   {
@@ -61,7 +61,7 @@ const storeItems = [
     desc: "These mountain cleats will help you push up the boulder faster, but walking down in them is pretty tough."
   },
   {
-    id: 15, name: "Mountain Goat Heritage", price: 62, scoreToReveal: 150,
+    id: 15, name: "Mountain Goat Blood", price: 62, scoreToReveal: 150,
     desc: "The gods start meddling with your bloodline and suddenly you are part mountain goat. Getting down is easier, but the hooves make it harder to push the boulder."
   },
   {

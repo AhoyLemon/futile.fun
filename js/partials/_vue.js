@@ -127,10 +127,32 @@ var app = new Vue({
       } else if (id == 6) { // heelies
         self.s.pushForce = (self.s.pushForce * 0.85);
         self.s.retreatSpeed = (self.s.retreatSpeed * 1.4);
-      } else if (id == 7) { // turkey sandwich
+      } else if (id == 7) { // dignity
         
-      } else if (id == 8) { // rancid taco
-        
+        // tbd?
+
+      } else if (id == 8) { // persephone's ire
+        self.s.pushForce = (self.s.pushForce * 1.2);
+      } else if (id == 9) { // boner pills
+        // does nothing
+      } else if (id == 10) { // jock jams
+        self.s.pushForce = (self.s.pushForce * 1.05);
+      } else if (id == 11) { // hades fashion
+        self.s.pushForce = (self.s.pushForce * 0.6);
+      } else if (id == 12) { // deus ex machina
+        self.r.height = (self.r.height * 2);
+        self.r.width = (self.r.width * 2);
+        self.r.marginLeft = (self.r.marginLeft * 2.7);
+        self.s.pushForce = (self.s.pushForce * 0.3);
+      } else if (id == 13) { // spite
+        self.s.pushForce = (self.s.pushForce * 1.05);
+        self.s.retreatSpeed = (self.s.retreatSpeed * 1.05);
+      } else if (id == 14) { // crampons
+        self.s.pushForce = (self.s.pushForce * 1.4);
+        self.s.retreatSpeed = (self.s.retreatSpeed * 0.6);
+      } else if (id == 15) { // mountain goat blood
+        self.s.pushForce = (self.s.pushForce * 0.6);
+        self.s.retreatSpeed = (self.s.retreatSpeed * 1.4);
       }
       
     },
