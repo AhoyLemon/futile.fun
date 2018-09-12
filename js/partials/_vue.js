@@ -187,6 +187,19 @@ var app = new Vue({
       text: 'Check me out! I\'m a notice.',
       hide: false
     });
+
+    new PNotify({
+      //title: 'Achievement Unlocked!',
+      text: "<b>25 G</b> You wasted your time.",
+      hide: false
+    });
+
+    new PNotify({
+      title: 'Achievement Unlocked!',
+      text: "Maecenas ornare interdum eros, sit amet placerat orci auctor quis. Pellentesque iaculis diam dolor, vel porta nisi fermentum vitae. Phasellus iaculis dui arcu, in molestie mi porta sed.",
+      hide: false
+    });
+    
   }
 
 });
