@@ -121,7 +121,7 @@ const storeItems = [
     desc: "One of those beer hats, but filled with espresso. Helps you run down the hill faster."
   },
   {
-    id: 30, name: "Part-Time Intern", price: 1, scoreToReveal: 380,
+    id: 30, name: "Part-Time Intern", price: 0, scoreToReveal: 380,
     desc: "An intern looking for Greek History credits and experience. Only there to help you push up the boulder."
   }
 ];
