@@ -101,6 +101,10 @@ var app = new Vue({
 
       sendEvent('item purchase', item.name, item.price);
       
+      if (self.inventory.length == 1) {
+        self.getCheevo('Shopping In Hades!', 'First item purchased.', 10);
+      }
+
     },
 
     foo(item) {
@@ -207,7 +211,7 @@ var app = new Vue({
       self.secondsPlayed++;
 
       if (self.secondsPlayed == 1) {
-        self.getCheevo('Achievement Unlocked', 'You have played the game for '+self.secondsPlayed+' seconds.', 1);
+        self.getCheevo('Achievement Unlocked', 'You have come to this website.', 1);
       } else if (self.secondsPlayed == 10) {
         self.getCheevo('Achievement Unlocked', 'You have played the game for '+self.secondsPlayed+' seconds.', 5);
       } else  if (self.secondsPlayed == 60) {
