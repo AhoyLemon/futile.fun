@@ -2956,7 +2956,7 @@ aside.inventory {
   aside.inventory a.toggle {
     cursor: help; }
 
-.score-hud {
+.counter-box {
   position: fixed;
   right: 30px;
   bottom: 10px;
@@ -2965,14 +2965,14 @@ aside.inventory {
   font-family: "Poppins", sans-serif;
   border: 1px solid currentColor;
   background: #212121; }
-  .score-hud .label {
+  .counter-box .label {
     display: block;
     border-bottom: 1px solid currentColor;
     text-align: center;
     text-transform: uppercase;
     background: yellow;
     color: #212121; }
-  .score-hud .count {
+  .counter-box .count {
     display: block;
     text-align: center;
     font-size: 400%;

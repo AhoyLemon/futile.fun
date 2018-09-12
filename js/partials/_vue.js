@@ -98,6 +98,8 @@ var app = new Vue({
         self.store.splice(i,1);
         self.buyItemEffect(item.id);
       }
+
+      sendEvent('item purchase', item.name, item.price);
       
     },
 
@@ -153,10 +155,22 @@ var app = new Vue({
       let t;
       if (points) { 
         t = '<strong>'+points+'💀</strong> '+text;
+        self.cheevos = self.cheevos + points;
       } else {
         t = text;
       }
 
+      if (title && text) {
+        sendEvent("cheevo", title, text);
+      } else if (title && points) {
+        sendEvent("cheevo", title, points);
+      } else if (text && points) {
+        sendEvent("cheevo", text, points);
+      } else if (text) {
+        sendEvent("cheevo", text);
+      } else if (title) {
+        sendEvent("cheevo", title);
+      }
 
 
       new PNotify({
@@ -169,7 +183,14 @@ var app = new Vue({
     everySecond() {
       let self = this;
       self.secondsPlayed++;
-      self.getCheevo(null, 'You have played the game for '+self.secondsPlayed+' seconds.', self.secondsPlayed);
+
+      if (self.secondsPlayed == 10) {
+        self.getCheevo('Achievement Unlocked', 'You have played the game for '+self.secondsPlayed+' seconds.', 5);
+      } else  if (self.secondsPlayed == 60) {
+        self.getCheevo('One minute mark!', 'You have played the game for one minute.', 10);
+      }
+
+      
     }
 
 
@@ -201,14 +222,12 @@ var app = new Vue({
       let self = this;
       let a = [];
       self.store.forEach(function(item,i) {
-        if (self.totalScore > (item.price * 0.9)) {
+        if (self.totalScore >= item.scoreToReveal) {
           a.push(item);
         }
       });
       return a;
     }
-
-
 
   },
 
