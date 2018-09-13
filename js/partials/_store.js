@@ -27,12 +27,10 @@ const storeItems = [
     id: 7, name: "Dignity", price: 48635, scoreToReveal: 300,
     desc: "You've played this game for far too long. I'm taking your diginity and you can buy it back."
   },
-  /*
   {
-    id: 8, name: "Persephone's Ire", price: 85, scoreToReveal: 200,
-    desc: "She's still mad you tricked her to get out of hell, and the palpable rage will help you push the boulder up faster to get away."
+    id: 8, name: "A Phone Call From Your Mom", price: 10, scoreToReveal:10,
+    desc: "Will make you feel smaller (figuratively, of course)"
   },
-  */
   {
     id: 9, name: "Zeus' Cialis", price: 69, scoreToReveal: 200,
     desc: "Must have fallen from Olympus?"

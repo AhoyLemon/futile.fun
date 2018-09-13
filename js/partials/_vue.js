@@ -167,8 +167,10 @@ var app = new Vue({
           // TBD?
           break;
         case 8: 
-          //---- persephone's ire
-          self.s.pushForce = (self.s.pushForce * 1.2);
+          //---- a phone call from your mom
+          self.s.height = (self.s.height * 0.77);
+          self.s.width = (self.s.width * 0.77);
+          self.r.marginLeft = (self.r.marginLeft * 1.8);
           break;
         case 9: 
           //---- boner pills
