@@ -49,7 +49,7 @@ const storeItems = [
     desc: "Mainly an aesthetic of ash, chains and sackcloth that is very much de riguer in the underworld. Makes pushing the boulder significantly harder."
   },
   {
-    id: 12, name: "Deus Ex Machina", price: 500, scoreToReveal: 250,
+    id: 12, name: "Deus Ex Machina", price: 250, scoreToReveal: 500,
     desc: "Having forgotten you were doing this for so long, the gods finally remember you exist, then mock you with a new heavier boulder."
   },
   {

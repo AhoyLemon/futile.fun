@@ -45,6 +45,24 @@ function randomFrom(array) {
   return array[Math.floor(Math.random()*(array.length))];
 }
 
+function removeFromArray(array,key,value) {
+  for (var i = array.length - 1; i >= 0; --i) {
+    if (array[i][key] == value) {
+        array.splice(i,1);
+    }
+  }
+}
+
+function findInArray(array,key,value) {
+  for (var i = array.length - 1; i >= 0; --i) {
+    if (array[i][key] == value) {
+      return i;
+      //alert(i);
+      //break;
+    }
+  }
+}
+
 function shuffle(o){
   for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
   return o;

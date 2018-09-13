@@ -92,10 +92,14 @@ var app = new Vue({
       
       if (self.score >= item.price) {
         self.score -= item.price;
-        let n = self.store[i];
+
+        let s = findInArray(self.store,'id',item.id);
+        let n = self.store[s];
         n.showDesc = false;
         self.inventory.push(n);
-        self.store.splice(i,1);
+        
+        //self.store.splice(i,1);
+        removeFromArray(self.store,'id',item.id);
         self.buyItemEffect(item.id);
       }
 
