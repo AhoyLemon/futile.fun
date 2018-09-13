@@ -14,7 +14,8 @@ const rockFellMessages = [
   "Damn it!",
   "The rock fell.",
   "Oh no.",
-  "Crap!"
+  "Crap!",
+  "Well, that's not great."
 ];
 
 const retreatMessages = [
@@ -23,5 +24,9 @@ const retreatMessages = [
   "Back down to the bottom.",
   "Maybe next time.",
   "No problem! Just go back.",
-  "Go back down the hill."
+  "Go back down the hill.",
+  "Retrieve the rock",
+  "Okay, back down to the bottom.",
+  "Return for the boulder, Sisyphus.",
+  "You must return for the boulder."
 ];

@@ -2690,11 +2690,11 @@ main {
       background-repeat: repeat-x;
       z-index: 2;
       width: 220%;
-      -webkit-transition: -webkit-transform 1.5s linear;
-      transition: -webkit-transform 1.5s linear;
-      -o-transition: transform 1.5s linear;
-      transition: transform 1.5s linear;
-      transition: transform 1.5s linear, -webkit-transform 1.5s linear; }
+      -webkit-transition: -webkit-transform 0.75s linear;
+      transition: -webkit-transform 0.75s linear;
+      -o-transition: transform 0.75s linear;
+      transition: transform 0.75s linear;
+      transition: transform 0.75s linear, -webkit-transform 0.75s linear; }
     .scene figure .hill {
       position: absolute;
       top: 0;

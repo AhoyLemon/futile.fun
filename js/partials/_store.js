@@ -13,7 +13,7 @@ const storeItems = [
   },
   {
     id: 4, name: "Analgesic Heat Rub", price: 70, scoreToReveal:140,
-    desc: "Smells terrible! But should allow you to push to boulder a little bit faster.",
+    desc: "Smells terrible!",
   },
   {
     id: 5, name: "Peach Tea", price: 160, scoreToReveal:195,
