@@ -24,8 +24,7 @@ var app = new Vue({
     },
     store: storeItems,
     inventory: [],
-    cheevos: 0,
-
+    cheevos: 0
   },
 
   methods: {
@@ -84,6 +83,7 @@ var app = new Vue({
           self.fg.transform = 0;
           self.bg.transform = 0;
           self.r.rollbacks++;
+          sendEvent("Rollback", self.r.rollbacks+' time(s)');
         }
       } 
     },
