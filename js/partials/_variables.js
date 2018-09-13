@@ -28,5 +28,6 @@ const rDefaults = {
   width: 17,
   height: 17,
   marginLeft: -3.6,
-  peak: 74
+  peak: 74,
+  rollbacks: 0
 };

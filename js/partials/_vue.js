@@ -83,6 +83,7 @@ var app = new Vue({
           self.r.falling = false;
           self.fg.transform = 0;
           self.bg.transform = 0;
+          self.r.rollbacks++;
         }
       } 
     },
