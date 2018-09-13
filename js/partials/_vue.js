@@ -119,93 +119,144 @@ var app = new Vue({
 
     buyItemEffect(id) {
       let self = this;
-      if (id == 1) { // Fresh Kicks
-        self.s.pushForce = (self.s.pushForce * 1.01);
-        self.s.retreatSpeed = (self.s.retreatSpeed * 1.3);
-      } else if (id == 2) { // small pickaxe
-        self.r.height = (self.r.height * 0.85);
-        self.r.width = (self.r.width * 0.85);
-        self.s.pushForce = (self.s.pushForce * 1.5);
-      } else if (id == 3) { // gum
-        self.r.height = (self.r.height * 1.15);
-        self.r.width = (self.r.width * 1.15);
-        self.s.pushForce = (self.s.pushForce * 0.5);
-      } else if (id == 4) { // analgesic
-        self.s.pushForce = (self.s.pushForce * 1.35);
-      } else if (id == 5) { // peach tea
-        // does nothing
-      } else if (id == 6) { // heelies
-        self.s.pushForce = (self.s.pushForce * 0.85);
-        self.s.retreatSpeed = (self.s.retreatSpeed * 1.4);
-      } else if (id == 7) { // dignity
-        
-        // tbd?
 
-      } else if (id == 8) { // persephone's ire
-        self.s.pushForce = (self.s.pushForce * 1.2);
-      } else if (id == 9) { // boner pills
-        // does nothing
-      } else if (id == 10) { // jock jams
-        self.s.pushForce = (self.s.pushForce * 1.05);
-      } else if (id == 11) { // hades fashion
-        self.s.pushForce = (self.s.pushForce * 0.6);
-      } else if (id == 12) { // deus ex machina
-        self.r.height = (self.r.height * 2);
-        self.r.width = (self.r.width * 2);
-        self.r.marginLeft = (self.r.marginLeft * 2.7);
-        self.s.pushForce = (self.s.pushForce * 0.3);
-      } else if (id == 13) { // spite
-        self.s.pushForce = (self.s.pushForce * 1.05);
-        self.s.retreatSpeed = (self.s.retreatSpeed * 1.05);
-      } else if (id == 14) { // crampons
-        self.s.pushForce = (self.s.pushForce * 1.4);
-        self.s.retreatSpeed = (self.s.retreatSpeed * 0.6);
-      } else if (id == 15) { // mountain goat blood
-        self.s.pushForce = (self.s.pushForce * 0.6);
-        self.s.retreatSpeed = (self.s.retreatSpeed * 1.4);
-      } else if (id == 16) { // yogurt pouch
-        self.s.retreatSpeed = (self.s.retreatSpeed * 1.18);
-      } else if (id == 17) { // knee braces
-
-        // does nothing
-
-      } else if (id == 18) { // moral support
-        self.r.height = (self.r.height * 1.2);
-        self.r.width = (self.r.width * 1.2);
-        self.r.marginLeft = (self.r.marginLeft * 1.4);
-        self.s.pushForce = (self.s.pushForce * 0.83);
-      } else if (id == 19) { // thanatos' chains
-        self.s.pushForce = (self.s.pushForce * 0.4);
-
-      } else if (id == 20) { // lemon water
-        self.s.pushForce = (self.s.pushForce * 1.07);
-        self.s.retreatSpeed = (self.s.retreatSpeed * 1.07);
-      } else if (id == 22) { // little league trophy
-        self.s.retreatSpeed = (self.s.retreatSpeed * 1.13);
-      } else if (id == 23) { // sand paper
-        self.r.height = (self.r.height * 0.8);
-        self.r.width = (self.r.width * 0.8);
-        self.r.marginLeft = (self.r.marginLeft * 0.9);
-        self.s.pushForce = (self.s.pushForce * 1.4);
-      } else if (id == 24) { // stickers (scented)
-        self.s.pushForce = (self.s.pushForce * 0.8);
-      } else if (id == 25) { // stickers (puffy)
-        self.r.height = (self.r.height * 1.15);
-        self.r.width = (self.r.width * 1.15);
-        self.r.marginLeft = (self.r.marginLeft * 1.21);
-        self.s.pushForce = (self.s.pushForce * 1.18);
-      } else if (id == 27) { // firecrackers
-        self.r.height = (self.r.height * 0.8);
-        self.r.width = (self.r.width * 0.8);
-        self.r.marginLeft = (self.r.marginLeft * 0.9);
-        self.s.pushForce = (self.s.pushForce * 1.18);
-      } else if (id == 28) { // bedazzler
-        self.r.height = (self.r.height * 1.27);
-        self.r.width = (self.r.width * 1.27);
-        self.r.marginLeft = (self.r.marginLeft * 1.36);
-        self.s.pushForce = (self.s.pushForce * 0.78);
-      } else if (id == 29) { // espresso
-        self.s.retreatSpeed = (self.s.retreatSpeed * 1.6);
+      switch (id) {
+        case 1: 
+          //---- Fresh Kicks
+          self.s.pushForce = (self.s.pushForce * 1.01);
+          self.s.retreatSpeed = (self.s.retreatSpeed * 1.3);
+          break;
+        case 2: 
+          //---- small pickaxe
+          self.r.height = (self.r.height * 0.85);
+          self.r.width = (self.r.width * 0.85);
+          self.s.pushForce = (self.s.pushForce * 1.5);
+          break;
+        case 3: 
+          //---- gum
+          self.r.height = (self.r.height * 1.15);
+          self.r.width = (self.r.width * 1.15);
+          self.s.pushForce = (self.s.pushForce * 0.5);
+          break;
+        case 4: 
+          //---- analgesic
+          self.s.pushForce = (self.s.pushForce * 1.35);
+          break;
+        case 5: 
+          //---- peach tea
+          self.s.pushForce = (self.s.pushForce * 0.85);
+          self.s.retreatSpeed = (self.s.retreatSpeed * 1.4);
+          break;
+        case 6: 
+          //---- heelies
+          self.s.pushForce = (self.s.pushForce * 0.85);
+          self.s.retreatSpeed = (self.s.retreatSpeed * 1.4);
+          break;
+        case 7: 
+          //---- dignity          
+          // TBD?
+          break;
+        case 8: 
+          //---- persephone's ire
+          self.s.pushForce = (self.s.pushForce * 1.2);
+          break;
+        case 9: 
+          //---- boner pills
+          // does nothing
+        case 10: 
+          //---- jock jams
+          self.s.pushForce = (self.s.pushForce * 1.05);
+          break;
+        case 11: 
+          //---- hades fashion
+          self.s.pushForce = (self.s.pushForce * 0.6);
+          break;
+        case 12: 
+          //---- a new, heavier boulder
+          self.r.height = (self.r.height * 2);
+          self.r.width = (self.r.width * 2);
+          self.r.marginLeft = (self.r.marginLeft * 2.7);
+          self.s.pushForce = (self.s.pushForce * 0.3);
+          break;
+        case 13: 
+          //---- spite
+          self.s.pushForce = (self.s.pushForce * 1.05);
+          self.s.retreatSpeed = (self.s.retreatSpeed * 1.05);
+          break;
+        case 14: 
+          //---- crampons
+          self.s.pushForce = (self.s.pushForce * 1.4);
+          self.s.retreatSpeed = (self.s.retreatSpeed * 0.6);
+          break;
+        case 15: 
+          //----mountain goat blood
+          self.s.pushForce = (self.s.pushForce * 0.6);
+          self.s.retreatSpeed = (self.s.retreatSpeed * 1.4);
+          break;
+        case 16: 
+          //---- yogurt pouch
+          self.s.retreatSpeed = (self.s.retreatSpeed * 1.07);
+          break;
+        case 17: 
+          //---- knee braces
+          // does nothing
+          break;
+        case 18: 
+          //---- moral support
+          self.r.height = (self.r.height * 1.2);
+          self.r.width = (self.r.width * 1.2);
+          self.r.marginLeft = (self.r.marginLeft * 1.4);
+          self.s.pushForce = (self.s.pushForce * 0.83);
+          break;
+        case 19: 
+          //---- thanatos' chains
+          self.s.pushForce = (self.s.pushForce * 0.4);
+          break;
+        case 20: 
+          //---- lemon water
+          self.s.pushForce = (self.s.pushForce * 1.07);
+          self.s.retreatSpeed = (self.s.retreatSpeed * 1.07);
+          break;
+        case 22: 
+          //---- little league trophy
+          self.s.retreatSpeed = (self.s.retreatSpeed * 1.13);
+          break;
+        case 23: 
+          //---- sand paper
+          self.r.height = (self.r.height * 0.8);
+          self.r.width = (self.r.width * 0.8);
+          self.r.marginLeft = (self.r.marginLeft * 0.9);
+          self.s.pushForce = (self.s.pushForce * 1.4);
+          break;
+        case 24: 
+          //---- stickers (scented)
+          self.s.pushForce = (self.s.pushForce * 0.8);
+          break;
+        case 25: 
+          //---- stickers (puffy) 
+          self.r.height = (self.r.height * 1.15);
+          self.r.width = (self.r.width * 1.15);
+          self.r.marginLeft = (self.r.marginLeft * 1.21);
+          self.s.pushForce = (self.s.pushForce * 1.18);
+          break;
+        case 27: 
+          //---- firecrackers
+          self.r.height = (self.r.height * 0.8);
+          self.r.width = (self.r.width * 0.8);
+          self.r.marginLeft = (self.r.marginLeft * 0.9);
+          self.s.pushForce = (self.s.pushForce * 1.18);
+          break;
+        case 28: 
+          //---- bedazzler
+          self.r.height = (self.r.height * 1.27);
+          self.r.width = (self.r.width * 1.27);
+          self.r.marginLeft = (self.r.marginLeft * 1.36);
+          self.s.pushForce = (self.s.pushForce * 0.78);
+          break;
+        case 29: 
+          //---- espresso
+          self.s.retreatSpeed = (self.s.retreatSpeed * 1.38);
+          break;
       }
       
     },
@@ -259,11 +310,9 @@ var app = new Vue({
 
       // give cheevos based on cheevos!
       if (self.cheevos == 2) {
-
         setTimeout(function(){ 
-          self.getCheevo("And Here Is A Third!", "You've had two achivements, so here is a third achievement for getting those.", 12)
+          self.getCheevo("And Here Is A Third!", "You've had two achivements, so here is a third achievement for getting those.", 12);
         }, 1500);
-        
       }
       
     },
