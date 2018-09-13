@@ -25,7 +25,8 @@ $scene: ($rock * 5);
 
 
     .sisyphys { display: block; position: absolute; z-index: $z-sisyphus; cursor: pointer; transition:all 0.3s ease; color:black; background:transparent; border:none; padding:0; outline:none;
-      .st0{fill:#efa547}.st1{fill:#0b191e}.st2{fill:#f8c977} 
+      &::-moz-focus-inner { border:0; }
+      .st0{ fill:#efa547}.st1{fill:#0b191e}.st2{fill:#f8c977} 
       //background-image:url(../svg/pusher.svg); background-position: bottom right; background-size:contain; background-repeat: no-repeat;
       //svg * { fill:currentColor; }
       //&:hover svg * { fill:darkblue; }

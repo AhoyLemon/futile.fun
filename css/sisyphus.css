@@ -2728,6 +2728,8 @@ main {
       border: none;
       padding: 0;
       outline: none; }
+      .scene figure .sisyphys::-moz-focus-inner {
+        border: 0; }
       .scene figure .sisyphys .st0 {
         fill: #efa547; }
       .scene figure .sisyphys .st1 {

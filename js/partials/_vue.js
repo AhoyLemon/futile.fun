@@ -161,6 +161,49 @@ var app = new Vue({
       } else if (id == 15) { // mountain goat blood
         self.s.pushForce = (self.s.pushForce * 0.6);
         self.s.retreatSpeed = (self.s.retreatSpeed * 1.4);
+      } else if (id == 16) { // yogurt pouch
+        self.s.retreatSpeed = (self.s.retreatSpeed * 1.18);
+      } else if (id == 17) { // knee braces
+
+        // does nothing
+
+      } else if (id == 18) { // moral support
+        self.r.height = (self.r.height * 1.2);
+        self.r.width = (self.r.width * 1.2);
+        self.r.marginLeft = (self.r.marginLeft * 1.4);
+        self.s.pushForce = (self.s.pushForce * 0.83);
+      } else if (id == 19) { // thanatos' chains
+        self.s.pushForce = (self.s.pushForce * 0.4);
+
+      } else if (id == 20) { // lemon water
+        self.s.pushForce = (self.s.pushForce * 1.07);
+        self.s.retreatSpeed = (self.s.retreatSpeed * 1.07);
+      } else if (id == 22) { // little league trophy
+        self.s.retreatSpeed = (self.s.retreatSpeed * 1.13);
+      } else if (id == 23) { // sand paper
+        self.r.height = (self.r.height * 0.8);
+        self.r.width = (self.r.width * 0.8);
+        self.r.marginLeft = (self.r.marginLeft * 0.9);
+        self.s.pushForce = (self.s.pushForce * 1.4);
+      } else if (id == 24) { // stickers (scented)
+        self.s.pushForce = (self.s.pushForce * 0.8);
+      } else if (id == 25) { // stickers (puffy)
+        self.r.height = (self.r.height * 1.15);
+        self.r.width = (self.r.width * 1.15);
+        self.r.marginLeft = (self.r.marginLeft * 1.21);
+        self.s.pushForce = (self.s.pushForce * 1.18);
+      } else if (id == 27) { // firecrackers
+        self.r.height = (self.r.height * 0.8);
+        self.r.width = (self.r.width * 0.8);
+        self.r.marginLeft = (self.r.marginLeft * 0.9);
+        self.s.pushForce = (self.s.pushForce * 1.18);
+      } else if (id == 28) { // bedazzler
+        self.r.height = (self.r.height * 1.27);
+        self.r.width = (self.r.width * 1.27);
+        self.r.marginLeft = (self.r.marginLeft * 1.36);
+        self.s.pushForce = (self.s.pushForce * 0.78);
+      } else if (id == 29) { // espresso
+        self.s.retreatSpeed = (self.s.retreatSpeed * 1.6);
       }
       
     },
