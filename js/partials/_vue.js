@@ -24,7 +24,8 @@ var app = new Vue({
     },
     store: storeItems,
     inventory: [],
-    cheevos: 0
+    cheevos: 0,
+    cheevoPoints: 0
   },
 
   methods: {
@@ -229,7 +230,6 @@ var app = new Vue({
       let t;
       if (points) { 
         t = '<strong>'+points+'💀</strong> '+text;
-        self.cheevos = self.cheevos + points;
       } else {
         t = text;
       }
@@ -252,6 +252,20 @@ var app = new Vue({
         text: t
       });
 
+      if (points) {
+        self.cheevoPoints = self.cheevoPoints + 5;
+      }
+      self.cheevos++;
+
+      // give cheevos based on cheevos!
+      if (self.cheevos == 2) {
+
+        setTimeout(function(){ 
+          self.getCheevo("And Here Is A Third!", "You've had two achivements, so here is a third achievement for getting those.", 12)
+        }, 1500);
+        
+      }
+      
     },
 
     everySecond() {
