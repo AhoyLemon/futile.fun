@@ -85,6 +85,16 @@ var app = new Vue({
           self.bg.transform = 0;
           self.r.rollbacks++;
           sendEvent("Rollback", self.r.rollbacks+' time(s)');
+
+          switch(self.r.rollbacks) {
+            case 3:
+              self.getCheevo('Antiturkey', 'Three gutterballs! Clearly you should keep bowling.', 10);
+              break;
+            case 7:
+              self.getCheevo('Still failing!', "It's rolled back 7 times now, but don't let that stop you.", 15);
+              break;
+          }
+
         }
       } 
     },
