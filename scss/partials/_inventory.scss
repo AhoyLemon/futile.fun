@@ -12,7 +12,7 @@ aside.inventory { z-index: 2; overflow: hidden;
   
   aside.inventory { @include position(fixed,0,0,0,0); z-index: $z-aside-mobile; transform: translateX(-102%); transition: transform 1.25s ease;
     &.mobileVisible { transform:translateX(0); }
-    .header {  margin-bottom: 0; padding-left: 10px; padding-right: 10px; }
+    .header {  margin-bottom: 0; padding-left: 55px; padding-right: 10px; text-align: left;  }
     .inner { padding:10px; }
   }
 

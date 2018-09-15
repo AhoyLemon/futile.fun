@@ -2936,7 +2936,10 @@ aside.store {
     aside.store.mobileVisible {
       -webkit-transform: translateX(0);
       -ms-transform: translateX(0);
-      transform: translateX(0); } }
+      transform: translateX(0); }
+    aside.store .header {
+      text-align: right;
+      padding-right: 2em; } }
 
 @media screen and (min-width: 768px) {
   aside.store {
@@ -3001,8 +3004,9 @@ aside.inventory {
       transform: translateX(0); }
     aside.inventory .header {
       margin-bottom: 0;
-      padding-left: 10px;
-      padding-right: 10px; }
+      padding-left: 55px;
+      padding-right: 10px;
+      text-align: left; }
     aside.inventory .inner {
       padding: 10px; }
   button.toggle.inventory {
