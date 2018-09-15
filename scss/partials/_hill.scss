@@ -1,8 +1,8 @@
 body { background:#333; }
-main { height: 99vh; @include flex-center(); font-family: $font; }
+main { font-family: $font; }
 
 $rock: 8vw;
-$scene: ($rock * 5);
+$desktopScene: ($rock * 5);
 
 .test { height:100px; width: 100px; overflow: visible; z-index: 100; position: relative; display: none;
   .inner { @include position(absolute,0,null,0,0); width:285%; background-image:url(../svg/background.svg); background-position: bottom left; background-size:contain; background-repeat: no-repeat; background-color:lime; }
@@ -14,8 +14,8 @@ $scene: ($rock * 5);
   100%   {transform: translateX(0); }
 }
 
-.scene { width:$scene; position: relative;
-  figure { height:$scene; background:#999; position: relative; overflow: hidden;
+.scene { position: relative;
+  figure { background:#999; position: relative; overflow: hidden;
 
     .background { @include position(absolute,0,null,0,0); background-image:url(../svg/background.svg); background-size:cover; background-position: center left; background-repeat: repeat-x; z-index: $z-background;
       width: 220%; transition:transform 0.75s linear;
@@ -45,15 +45,39 @@ $scene: ($rock * 5);
     }
   }
 
-  .pillar { @include position(absolute,0); height: ($scene * 1.2); width: ($scene / 3.8); z-index: $z-pillar;
+  .pillar { @include position(absolute,0); z-index: $z-pillar;
     &.one { left:0; transform: translate(-75%,-5%); }
     &.two { right:0; transform: translate(75%,-4%); }
   }
 
 
-  figcaption { color:#272128; font-size:2.2vw; text-align: center; font-family: $headline; background-image:url(../svg/placard.svg); background-position: center; background-size:contain; background-repeat: no-repeat; height: 3em; 
+  figcaption { color:#272128;  text-align: center; font-family: $headline; background-image:url(../svg/placard.svg); background-position: center; background-size:contain; background-repeat: no-repeat; height: 3em; 
     @include flex-center(); line-height: 75%; position: relative; z-index: $z-figcaption; transform: translateY(-25%);
     //position: absolute;
   }
 }
 
+
+
+@media screen and (max-width:$mobile-max) {
+  .scene { margin-top:50px; 
+    figure { height:99vw; }
+    figcaption { height:14vw; font-size:4.5vw; }
+  }
+
+}
+
+@media screen and (min-width:$desktop-min) {
+  main { @include flex-center(); height: 99vh; }
+
+  .scene { width:$desktopScene;
+    figure { height:$desktopScene; }
+  }
+
+  .pillar {  height: ($desktopScene * 1.2); width: ($desktopScene / 3.8); }
+
+  figcaption { height:3em; font-size:2.2vw;
+
+  }
+
+}

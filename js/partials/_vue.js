@@ -15,6 +15,7 @@ var app = new Vue({
     totalScore: 0,
     secondsPlayed: 0,
     totalClicks: 0,
+    visibleDrawer: null,
     s: sDefaults,
     r: rDefaults,
     fg: {
@@ -371,8 +372,15 @@ var app = new Vue({
       } else  if (self.secondsPlayed == 60) {
         self.getCheevo('One minute mark!', 'You have played the game for one minute.', 10);
       }
+    },
 
-      
+    toggleDrawer(d) {
+      let self = this;
+      if (d == self.visibleDrawer) {
+        self.visibleDrawer = null;
+      } else {
+        self.visibleDrawer = d;
+      }
     }
 
 

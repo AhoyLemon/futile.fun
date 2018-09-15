@@ -10,3 +10,14 @@ $notifyIconSize: 60px;
     .ui-pnotify-closer, .ui-pnotify-sticker { color:yellow; }
   }
 }
+
+@media screen and (max-width:$mobile-max) {
+  .ui-pnotify { 
+    .brighttheme.ui-pnotify-container {
+      .ui-pnotify-title { font-size:16px; }
+      .ui-pnotify-text  { font-size:12px; }
+    }
+  }
+
+  .ui-pnotify-mobile-able.ui-pnotify.stack-bottomright { bottom: 5px !important; }
+}

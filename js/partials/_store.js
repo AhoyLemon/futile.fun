@@ -1,6 +1,7 @@
 const storeItems = [
   {
-    id: 1, name: "Fresh Kicks", price: 85, scoreToReveal: 60,
+    //id: 1, name: "Fresh Kicks", price: 85, scoreToReveal: 60,
+    id: 1, name: "Fresh Kicks", price: 1, scoreToReveal: 1, 
     desc: "Better arch support means that you can move slightly faster",
   },
   {
@@ -28,7 +29,7 @@ const storeItems = [
     desc: "You've played this game for far too long. I'm taking your diginity and you can buy it back."
   },
   {
-    id: 8, name: "A Phone Call From Your Mom", price: 10, scoreToReveal:10,
+    id: 8, name: "A Phone Call From Your Mom", price: 60, scoreToReveal:160,
     desc: "Will make you feel smaller (figuratively, of course)"
   },
   {

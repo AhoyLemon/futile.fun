@@ -1,4 +1,4 @@
-aside.store { @include position(fixed,0,0,0); overflow: hidden; width:calc(25% - 15px); padding:2em; overflow-y: auto;
+aside.store { overflow: hidden;  overflow-y: auto;
   .header { @extend %asideHead; }
   .item { @extend %item; 
     &.buyable { cursor: pointer; }
@@ -13,4 +13,20 @@ aside.store { @include position(fixed,0,0,0); overflow: hidden; width:calc(25% -
     //.desc { @include flex-item(75%); }
     .price { @include flex-item(25%); font-size:300%; text-align: center; padding-top:0.15em; font-weight:$bold; }
   }
+}
+
+@media screen and (max-width:$mobile-max) { 
+  
+  aside.store { @include position(fixed,0,0,0,0); z-index: $z-aside-mobile; padding:10px; transform: translateX(102%); transition: transform 1.25s ease;
+    &.mobileVisible { transform:translateX(0); }
+  }
+}
+
+
+@media screen and (min-width:$desktop-min) { 
+  aside.store { @include position(fixed,0,0,0); width:calc(25% - 15px); padding:2em; }
+}
+
+button.toggle.store { background-color:#ff416c; height:40px; width:40px; display: block; border:none; color:white; border-radius: 50%; font-size:20px; line-height: 40px;
+  @include position(fixed,4px,4px); z-index: $z-drawer-toggle;
 }
