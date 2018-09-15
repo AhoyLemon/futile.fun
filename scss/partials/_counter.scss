@@ -2,3 +2,10 @@
   .label { display: block; border-bottom: 1px solid currentColor; text-align: center; text-transform: uppercase; background:yellow; color:$black; }
   .count { display: block; text-align: center; font-size:400%; line-height: 100%; padding-bottom: 0.1em; }
 }
+
+@media screen and (max-width:$mobile-max) {
+  .counter-box { width:auto;
+    .label { font-size:12px; display: none; }
+    .count { font-size:22px; padding:0.3em 1em; }
+  }
+}

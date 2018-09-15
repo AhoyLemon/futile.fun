@@ -3064,6 +3064,16 @@ aside.inventory {
     line-height: 100%;
     padding-bottom: 0.1em; }
 
+@media screen and (max-width: 767px) {
+  .counter-box {
+    width: auto; }
+    .counter-box .label {
+      font-size: 12px;
+      display: none; }
+    .counter-box .count {
+      font-size: 22px;
+      padding: 0.3em 1em; } }
+
 .ui-pnotify .brighttheme.ui-pnotify-container {
   padding-left: 100px;
   background: #414042;
@@ -3098,6 +3108,6 @@ aside.inventory {
   .ui-pnotify .brighttheme.ui-pnotify-container .ui-pnotify-text {
     font-size: 12px; }
   .ui-pnotify-mobile-able.ui-pnotify.stack-bottomright {
-    bottom: 5px !important; } }
+    /* bottom: 5px !important; */ } }
 
 /*# sourceMappingURL=sisyphus.css.map */
