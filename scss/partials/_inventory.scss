@@ -24,8 +24,10 @@ aside.inventory { z-index: 2; overflow: hidden;
 
 
 @media screen and (min-width:$desktop-min) { 
-  aside.inventory { @include position(fixed,0,0,0); width:calc(25% - 15px);
+  aside.inventory { @include position(fixed,0,null,0,0); width:calc(25% - 15px);
     .header { padding:2rem; }
     .inner { padding:2em; @include position(absolute,60px,-17px,0,0); }
   }
+
+  button.toggle.inventory { display: none; }
 }

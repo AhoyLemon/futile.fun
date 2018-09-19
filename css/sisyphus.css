@@ -2849,72 +2849,38 @@ main {
 aside.store {
   overflow: hidden;
   overflow-y: auto; }
-  aside.store .item {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-flex-wrap: wrap;
-    -moz-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch; }
-    aside.store .item.buyable {
-      cursor: pointer; }
-    aside.store .item:not(.buyable) {
-      cursor: not-allowed; }
-    aside.store .item.buyable:hover {
-      background: -webkit-gradient(linear, left top, left bottom, from(#ff416c), to(#ff4b2b));
-      background: -webkit-linear-gradient(top, #ff416c, #ff4b2b);
-      background: -o-linear-gradient(top, #ff416c, #ff4b2b);
-      background: linear-gradient(to bottom, #ff416c, #ff4b2b);
-      -webkit-transform: scale(1.05);
-      -ms-transform: scale(1.05);
-      transform: scale(1.05); }
-    aside.store .item.buyable:active {
-      background: -webkit-gradient(linear, left top, left bottom, from(#ff416c), to(#ff4b2b));
-      background: -webkit-linear-gradient(top, #ff416c, #ff4b2b);
-      background: -o-linear-gradient(top, #ff416c, #ff4b2b);
-      background: linear-gradient(to bottom, #ff416c, #ff4b2b);
-      -webkit-transform: scale(0.95);
-      -ms-transform: scale(0.95);
-      transform: scale(0.95); }
-    aside.store .item:not(.buyable):hover {
-      background: -webkit-gradient(linear, left top, left bottom, from(#835761), to(#76544e));
-      background: -webkit-linear-gradient(top, #835761, #76544e);
-      background: -o-linear-gradient(top, #835761, #76544e);
-      background: linear-gradient(to bottom, #835761, #76544e); }
-    aside.store .item .name-and-desc {
-      -ms-flex-preferred-size: 75%;
-      flex-basis: 75%;
-      -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-      flex-grow: 1;
-      -ms-flex-negative: 1;
-      flex-shrink: 1;
-      -ms-flex-item-align: auto;
-      align-self: auto; }
-    aside.store .item .price {
-      -ms-flex-preferred-size: 25%;
-      flex-basis: 25%;
-      -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-      flex-grow: 1;
-      -ms-flex-negative: 1;
-      flex-shrink: 1;
-      -ms-flex-item-align: auto;
-      align-self: auto;
-      font-size: 300%;
-      text-align: center;
-      padding-top: 0.15em;
-      font-weight: 700; }
+  aside.store .item.buyable {
+    cursor: pointer; }
+  aside.store .item:not(.buyable) {
+    cursor: not-allowed; }
+  aside.store .item.buyable:hover {
+    background: -webkit-gradient(linear, left top, left bottom, from(#ff416c), to(#ff4b2b));
+    background: -webkit-linear-gradient(top, #ff416c, #ff4b2b);
+    background: -o-linear-gradient(top, #ff416c, #ff4b2b);
+    background: linear-gradient(to bottom, #ff416c, #ff4b2b);
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05); }
+  aside.store .item.buyable:active {
+    background: -webkit-gradient(linear, left top, left bottom, from(#ff416c), to(#ff4b2b));
+    background: -webkit-linear-gradient(top, #ff416c, #ff4b2b);
+    background: -o-linear-gradient(top, #ff416c, #ff4b2b);
+    background: linear-gradient(to bottom, #ff416c, #ff4b2b);
+    -webkit-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    transform: scale(0.95); }
+  aside.store .item:not(.buyable):hover {
+    background: -webkit-gradient(linear, left top, left bottom, from(#835761), to(#76544e));
+    background: -webkit-linear-gradient(top, #835761, #76544e);
+    background: -o-linear-gradient(top, #835761, #76544e);
+    background: linear-gradient(to bottom, #835761, #76544e); }
+  aside.store .item .price {
+    /* @include flex-item(75px); */
+    font-size: 260%;
+    text-align: left;
+    padding-top: 0.15em;
+    font-weight: 700;
+    float: right; }
 
 @media screen and (max-width: 767px) {
   aside.store {
@@ -2939,7 +2905,21 @@ aside.store {
       transform: translateX(0); }
     aside.store .header {
       text-align: right;
-      padding-right: 2em; } }
+      padding-right: 2em; }
+  button.toggle.store {
+    background-color: #ff416c;
+    height: 40px;
+    width: 40px;
+    display: block;
+    border: none;
+    color: white;
+    border-radius: 50%;
+    font-size: 20px;
+    line-height: 40px;
+    position: fixed;
+    top: 4px;
+    right: 4px;
+    z-index: 15; } }
 
 @media screen and (min-width: 768px) {
   aside.store {
@@ -2948,22 +2928,13 @@ aside.store {
     right: 0;
     bottom: 0;
     width: calc(25% - 15px);
-    padding: 2em; } }
-
-button.toggle.store {
-  background-color: #ff416c;
-  height: 40px;
-  width: 40px;
-  display: block;
-  border: none;
-  color: white;
-  border-radius: 50%;
-  font-size: 20px;
-  line-height: 40px;
-  position: fixed;
-  top: 4px;
-  right: 4px;
-  z-index: 15; }
+    padding: 2em 1em 100px 2em; }
+    aside.store .item .name {
+      font-size: 16px; }
+    aside.store .item .desc {
+      font-size: 12px; }
+  button.toggle.store {
+    display: none; } }
 
 aside.inventory {
   z-index: 2;
@@ -3028,8 +2999,8 @@ aside.inventory {
   aside.inventory {
     position: fixed;
     top: 0;
-    right: 0;
     bottom: 0;
+    left: 0;
     width: calc(25% - 15px); }
     aside.inventory .header {
       padding: 2rem; }
@@ -3039,13 +3010,14 @@ aside.inventory {
       top: 60px;
       right: -17px;
       bottom: 0;
-      left: 0; } }
+      left: 0; }
+  button.toggle.inventory {
+    display: none; } }
 
 .counter-box {
   position: fixed;
   right: 30px;
   bottom: 10px;
-  width: 100px;
   color: yellow;
   font-family: "Poppins", sans-serif;
   border: 1px solid currentColor;
@@ -3060,7 +3032,7 @@ aside.inventory {
   .counter-box .count {
     display: block;
     text-align: center;
-    font-size: 400%;
+    font-size: 300%;
     line-height: 100%;
     padding-bottom: 0.1em; }
 
@@ -3073,6 +3045,13 @@ aside.inventory {
     .counter-box .count {
       font-size: 22px;
       padding: 0.3em 1em; } }
+
+@media screen and (min-width: 768px) {
+  .counter-box {
+    width: auto;
+    min-width: 100px; }
+    .counter-box .count {
+      padding: 0.25em 0.5em; } }
 
 .ui-pnotify .brighttheme.ui-pnotify-container {
   padding-left: 100px;

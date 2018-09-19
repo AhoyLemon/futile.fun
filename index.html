@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="A game that's just as depressing as the rest of your life, except this thing has achievements.">
-    <meta http-equiv="last-modified" content="2018-08-14@19:50:09">
+    <meta http-equiv="last-modified" content="2018-08-16@08:58:38">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,700|Eczar:400,700|Poppins:400,400i,700">
-    <link href="css/sisyphus.css?lastUpdated=2018-08-14@19:50:09" rel="stylesheet">
+    <link href="css/sisyphus.css?lastUpdated=2018-08-16@08:58:38" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -80,11 +80,9 @@
       <aside class="store" v-cloak v-if="availableUpgrades.length &gt; 0" v-bind:class="{ mobileVisible: (visibleDrawer == 'store') }">
         <div class="header">Buy Upgrades</div>
         <div class="animated zoomInDown" v-for="item,i in availableUpgrades" @click="buyItem(i,item)"><a class="item" v-bind:class="{ buyable: score &gt;= item.price}">
-            <div class="name-and-desc">
-              <div class="name">{{item.name}}</div>
-              <div class="desc">{{item.desc}}</div>
-            </div>
-            <div class="price">{{item.price}}</div></a></div>
+            <div class="price">{{item.price}}</div>
+            <div class="name">{{item.name}}</div>
+            <div class="desc">{{item.desc}}</div></a></div>
       </aside>
       <button class="toggle inventory" v-if="inventory.length &gt; 0" @click="toggleDrawer('inventory')"><span class="count" v-text="inventory.length"></span></button>
       <aside class="inventory" v-cloak v-show="inventory.length &gt; 0" v-bind:class="{ mobileVisible: (visibleDrawer == 'inventory') }">

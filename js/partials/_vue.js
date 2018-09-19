@@ -26,7 +26,7 @@ var app = new Vue({
     },
     store: storeItems,
     inventory: [],
-    cheevos: 0,
+    cheevos: [],
     cheevoPoints: 0
   },
 
@@ -346,7 +346,8 @@ var app = new Vue({
       if (points) {
         self.cheevoPoints = self.cheevoPoints + 5;
       }
-      self.cheevos++;
+
+      self.cheevos.push( { title:title,text:text,points:points });
 
       // give cheevos based on cheevos!
       if (self.cheevos == 2) {
@@ -355,7 +356,7 @@ var app = new Vue({
         }, 1500);
       } else if (self.cheevos == 7) {
         setTimeout(function(){ 
-          self.getCheevo("There Is No 7", "7 is considered a lucky number, so now you have 8 achievements.", 3);
+          self.getCheevo("You Cannot Have 7", "7 is considered a lucky number, so now you have 8 achievements.", 3);
         }, 1500);
       }
       
@@ -365,13 +366,29 @@ var app = new Vue({
       let self = this;
       self.secondsPlayed++;
 
+      switch (self.secondsPlayed) {
+        case (5):
+          self.getCheevo('Achievement Unlocked!', 'You have played this game for 5 seconds.', 5);
+          break;
+        case (60):
+          self.getCheevo('One minute mark!', 'You have played the game for one minute.', 10);
+          break;
+        case (300):
+          self.getCheevo('Five Minutes', 'Five minutes of this! How are you feelng about life?', 20);
+          break;
+        
+      }
+
+
+      
+/*
       if (self.secondsPlayed == 1) {
         self.getCheevo('Achievement Unlocked', 'You have come to this website.', 1);
       } else if (self.secondsPlayed == 10) {
         self.getCheevo('Achievement Unlocked', 'You have played the game for '+self.secondsPlayed+' seconds.', 5);
       } else  if (self.secondsPlayed == 60) {
         self.getCheevo('One minute mark!', 'You have played the game for one minute.', 10);
-      }
+      } */
     },
 
     toggleDrawer(d) {
