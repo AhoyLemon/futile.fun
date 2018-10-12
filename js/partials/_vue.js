@@ -16,6 +16,7 @@ var app = new Vue({
     secondsPlayed: 0,
     totalClicks: 0,
     visibleDrawer: null,
+    sidebarVisible: false,
     s: sDefaults,
     r: rDefaults,
     fg: {
@@ -398,6 +399,16 @@ var app = new Vue({
       } else {
         self.visibleDrawer = d;
       }
+    },
+
+    toggleSidebar() {
+      let self = this;
+      self.sidebarVisible = !self.sidebarVisible;
+
+      if (self.sidebarVisible) {
+        sendEvent('sidebar opened', self.secondsPlayed+' seconds played', self.totalScore+' totalScore');
+      }
+      
     }
 
 
