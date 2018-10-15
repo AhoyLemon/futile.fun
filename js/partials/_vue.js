@@ -376,20 +376,9 @@ var app = new Vue({
           break;
         case (300):
           self.getCheevo('Five Minutes', 'Five minutes of this! How are you feelng about life?', 20);
-          break;
-        
+          break; 
       }
-
-
       
-/*
-      if (self.secondsPlayed == 1) {
-        self.getCheevo('Achievement Unlocked', 'You have come to this website.', 1);
-      } else if (self.secondsPlayed == 10) {
-        self.getCheevo('Achievement Unlocked', 'You have played the game for '+self.secondsPlayed+' seconds.', 5);
-      } else  if (self.secondsPlayed == 60) {
-        self.getCheevo('One minute mark!', 'You have played the game for one minute.', 10);
-      } */
     },
 
     toggleDrawer(d) {
