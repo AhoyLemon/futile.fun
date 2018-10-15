@@ -19,5 +19,21 @@ $notifyIconSize: 60px;
     }
   }
 
-  .ui-pnotify-mobile-able.ui-pnotify.stack-bottomright { /* bottom: 5px !important; */ }
+  //.ui-pnotify-mobile-able.ui-pnotify.stack-bottomright { /* bottom: 5px !important; */ }
+
+
+  &.site-by-lemon { opacity: 0.2;
+    .ui-pnotify-container { background:yellow !important; }
+  }
+
+}
+
+.ui-pnotify.site-by-lemon {
+  .brighttheme.ui-pnotify-container { background:yellow; border-radius: 0; border:none; width:280px; float: right;
+    &:before { background-image:url(../svg/lemon.svg); }
+    .ui-pnotify-title a { font-family: $headline; font-size:1.5rem; text-decoration: none; color:black; display: block; padding-top:0.25em;
+      &:hover { text-decoration: underline; }
+    }
+    .ui-pnotify-closer, .ui-pnotify-sticker { color:$black; }
+  } 
 }
