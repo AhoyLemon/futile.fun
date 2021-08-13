@@ -1,4 +1,4 @@
-![futile.fun](https://futile.fun/og-image.png)
+![futile.fun](ahoylemon.github.io/futile.fun/og-image.png)
 
 ## What?
 Click Sisyphus to push the rock uphill?
