@@ -1,36 +1,28 @@
 - var testing = true
-- var siteTitle = "futile 💀 fun"
-- var siteURL = "https://ahoylemon.github.io/futile.fun"
+- var siteTitle = "Futile Fun is now @ kinda.fun"
+- var siteURL = "https://kinda.fun/sisyphus"
 - var fPlusURL = "https://thefpl.us/also-made/futile-fun"
-- var description = "A game that's just as depressing as the rest of your life, except this thing has achievements."
+- var description = "This game has moved to https://kinda.fun/sisyphus"
 - var d = new Date()
 - var lastUpdated = d.getFullYear() + '-' + (d.getMonth()<10?'0':'') + d.getMonth() + '-' + (d.getDate()<10?'0':'') + d.getDate() + '@' + (d.getHours()<10?'0':'') + d.getHours() + ':' + (d.getMinutes()<10?'0':'') + d.getMinutes() + ':' + (d.getSeconds()<10?'0':'') + d.getSeconds()
 
 doctype html
 html(lang="en")
   head
-    include partials/_head.pug
+    meta(charset="utf-8")
+    title= siteTitle
+    meta(http-equiv="X-UA-Compatible" content="IE=edge,chrome=1")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    meta(name="description" content=description)
+    meta(http-equiv="last-modified" content=lastUpdated)
+    link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,700|Eczar:400,700|Poppins:400,400i,700")
+    link(href="css/sisyphus.css?lastUpdated="+lastUpdated rel="stylesheet")
+    link(rel="canonical" href=siteURL)
   body
 
     #app
-      main(v-cloak)
-
-        include partials/_sidebar.pug
-
-        .scene
-          
-          include partials/_scene.pug
-        
-          .pillar.one
-            img(src="svg/pillar-1.svg")
-          .pillar.two
-            img(src="svg/pillar-2.svg")
-          figcaption(v-if="message")
-            .inner(v-text="message")
-
-      include partials/_store.pug
-      include partials/_inventory.pug
-      include partials/_counter.pug
-
-    include partials/_javascripts.pug
-    include partials/_schema.pug
+      main.moved
+        .inner
+          h1 This game has moved.
+          p To play Sisyphus Clicker, visit 
+            a(href="https://kinda.fun") kinda.fun
