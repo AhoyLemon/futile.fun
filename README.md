@@ -1,18 +1,4 @@
-![futile.fun](https://ahoylemon.github.io/futile.fun/og-wide.png)
+# This is an old repo!
 
-## What?
-Click Sisyphus to push the rock uphill?
-
-## Why?
-Because that's the point of the game.
-
-## Okay, then what?
-Do it some more.
-
-### Technology used
-* [Vue](https://vuejs.org)
-* [Pug](https://pugjs.org)
-* [Sass](https://sass-lang.com)
-* [PNotify](https://sciactive.com/pnotify)
-* [Prepros](https://prepros.io)
-* [GitHub Pages](https://pages.github.com)
+- If you're looking for the Repo for this game, it's over here: https://github.com/AhoyLemon/kinda.fun#sisyphus-clicker
+- Or, if you're just looking to play Sisyphus Clicker, you should go here: https://kinda.fun/sisyphus
